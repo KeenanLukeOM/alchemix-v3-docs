@@ -27,7 +27,12 @@ You can also choose to repay your loan manually. Let’s look at how to do this.
 
 On the vaults page, you can see that this account has a debt of $1050.35.
 
-<figure><img src="../../.gitbook/assets/image (11) (1).png" alt=""></img></figure>
+<figure>
+  <img
+    src="../../.gitbook/assets/image%20(11)%20(1).png"
+    alt=""
+  />
+</figure>
 
 Since both alUSD and alETH have been borrowed, we need to decide which loan to repay. Use the filters to display the debt owed for each alAsset type.
 
@@ -37,7 +42,13 @@ We only have DAI available in our wallet, but since Alchemix accepts DAI as a co
 
 Click on the repay button which opens the repay dialog.
 
-<figure><img src="../../.gitbook/assets/image (12) (1).png" alt=""><figcaption><p>Repay button</p></figcaption></img></figure>
+<figure>
+  <img
+    src="../../.gitbook/assets/image%20(12)%20(1).png"
+    alt="Repay button"
+  />
+  <figcaption>Repay button</figcaption>
+</figure>
 
 Select alUSD from the first dropdown, then select DAI from the next dropdown. It’s worth noting that the alUSD loan can be repaid in alUSD, DAI, USDC, or USDT, regardless of which vault originated the loan.
 

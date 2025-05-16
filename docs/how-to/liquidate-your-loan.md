@@ -25,13 +25,25 @@ The liquidate function allows you to use your deposited collateral as a source o
 
 To liquidate the alETH loan on this account we’ll open the liquidate dialog and choose the alETH from the first drop down menu. Since our deposit was made in WETH we’ll accept the default WETH in the second drop down.
 
-<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Select the debt you'd like to pay off</p></figcaption></img></figure>
+<figure>
+  <img
+    src="../../.gitbook/assets/image%20(15)%20(1).png"
+    alt="Select the debt you'd like to pay off"
+  />
+  <figcaption>Select the debt you'd like to pay off</figcaption>
+</figure>
 
 We want to liquidate all of the loan so let’s choose ‘max’ in the input box.
 
 As alETH is pegged to ETH there will be a small discrepancy in their value. To enable users to limit the effect of any slippage you can choose your preferred slippage tolerance here.
 
-<figure><img src="../../.gitbook/assets/image (16) (1).png" alt=""><figcaption><p>Slippage options</p></figcaption></img></figure>
+<figure>
+  <img
+    src="../../.gitbook/assets/image%20(16)%20(1).png"
+    alt="Slippage options"
+  />
+  <figcaption>Slippage options</figcaption>
+</figure>
 
 Once you’re happy with the liquidation parameters press liquidate.
 
