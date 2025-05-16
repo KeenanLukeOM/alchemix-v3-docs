@@ -76,21 +76,22 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "My Site",
+        title: "Alchemix",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Alchemix Logo",
+          src: "img/Alchemix-ALCX-Logo.webp",
         },
         items: [
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "User Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/devdocs", label: "Dev Docs", position: "left" },
+          { to: "/contracts", label: "Contracts", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/KeenanLukeOM/alchemix-v3-docs",
             label: "GitHub",
             position: "right",
           },
