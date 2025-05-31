@@ -154,7 +154,7 @@ const config = {
             items: [
               {
                 label: "Tutorial",
-                to: "/docs/intro",
+                to: "/alchemix-v3-docs/user",
               },
             ],
           },
