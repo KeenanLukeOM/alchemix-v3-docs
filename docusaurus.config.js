@@ -10,8 +10,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Alchemix Docs",
+  tagline: "Alchemix V3 Documentation",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -41,18 +41,66 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: "./sidebars.js",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/",
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    // — USER docs @ /user
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "user",
+        path: "docs/user",
+        routeBasePath: "user",
+        sidebarPath: require.resolve("./sidebars/sidebarsUser.js"),
+        editUrl:
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/user/",
+      },
+    ],
+
+    // — DEV docs @ /dev
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "dev",
+        path: "docs/dev", // your devdocs folder
+        routeBasePath: "dev", // served at /dev
+        sidebarPath: require.resolve("./sidebars/sidebarsDev.js"),
+        editUrl:
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/devdocs/",
+      },
+    ],
+
+    // — PROJECTS docs @ /projects
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "projects",
+        path: "docs/projects",
+        routeBasePath: "projects",
+        sidebarPath: require.resolve("./sidebars/sidebarsProjects.js"),
+        editUrl:
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/contracts/",
+      },
+    ],
+
+    // Redirect  root `/` → `/user`
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/",
+            to: "/user",
+          },
+        ],
+      },
     ],
   ],
 
@@ -66,16 +114,30 @@ const config = {
         logo: {
           alt: "Alchemix Logo",
           src: "img/Alchemix-ALCX-Logo.webp",
+          href: "/alchemix-v3-docs/user/",
         },
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "tutorialSidebar", // from sidebarsUser.js
+            docsPluginId: "user", // must match plugin id
             position: "left",
-            label: "User Docs",
+            label: "For Users",
           },
-          { to: "/docs/devdocs", label: "Dev Docs", position: "left" },
-          { to: "/docs/contracts", label: "Contracts", position: "left" },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar", // from sidebarsDev.js
+            docsPluginId: "dev",
+            position: "left",
+            label: "For Devs",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar", // from sidebarsProjects.js
+            docsPluginId: "projects",
+            position: "left",
+            label: "For Projects",
+          },
           {
             href: "https://github.com/KeenanLukeOM/alchemix-v3-docs",
             label: "GitHub",
@@ -83,6 +145,7 @@ const config = {
           },
         ],
       },
+      // TODO
       footer: {
         style: "dark",
         links: [

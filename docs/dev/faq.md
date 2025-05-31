@@ -1,23 +1,8 @@
 ---
-cover: ../.gitbook/assets/header_02_test.png
-coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+sidebar_position: 10
 ---
 
-# ⁉️ FAQ
+# ❓ FAQ
 
 <details>
 
