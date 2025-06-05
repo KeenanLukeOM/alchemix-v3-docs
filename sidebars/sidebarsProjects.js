@@ -1,54 +1,53 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 module.exports = {
   tutorialSidebar: [
+    // —————————————————————————————
+    // Landing page
     { type: "doc", id: "index", label: "📘 Welcome" },
 
+    //   Why Integrate
     {
       type: "category",
-      label: "Quickstart",
-      collapsed: false,
-      items: ["getting-started", "checklist"],
-    },
-
-    {
-      type: "category",
-      label: "Use Cases",
+      label: "Why Integrate",
       collapsed: false,
       items: [
-        "use-cases/alassets",
-        "use-cases/redemptions",
-        "use-cases/working-across-chains",
+        "why-integrate/overview",
+        "why-integrate/use-cases",
+        "why-integrate/case-studies",
+        "why-integrate/feature-comparison",
       ],
     },
 
+    //  How to Integrate
     {
       type: "category",
-      label: "Guides & Examples",
-      collapsed: false,
-      items: ["examples/ex1", "examples/ex2"],
-    },
-
-    {
-      type: "category",
-      label: "Architecture",
+      label: "How to Integrate",
       collapsed: false,
       items: [
-        "architecture", // Backlinks to dev here?
+        "how-to/integration-options",
+        "how-to/getting-started",
+        "how-to/architecture-diagram",
+        "how-to/supported-networks",
+        "how-to/friendly-fork",
       ],
     },
 
+    //   Support
     {
       type: "category",
-      label: "Trust & Security",
+      label: "Support",
       collapsed: false,
-      items: ["security-and-best-practices"],
+      items: ["support/co-marketing", "support/security"],
     },
 
+    //   Contact & Onboarding
     {
       type: "category",
-      label: "Governance",
+      label: "Contact & Onboarding",
       collapsed: false,
-      items: ["governance-overview"],
+      items: [
+        "contact/apply-to-partner", // Apply to Partner
+      ],
     },
 
     "testimonials",
