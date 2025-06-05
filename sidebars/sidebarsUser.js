@@ -9,6 +9,7 @@ module.exports = {
     {
       type: "category",
       label: "Key Concepts",
+      collapsed: false,
       items: [
         "concepts/self-repaying-loans",
         "concepts/alassets-and-redemptions",
@@ -19,6 +20,7 @@ module.exports = {
     {
       type: "category",
       label: "Tutorials",
+      collapsed: false,
       items: [
         "tutorials/deposit-and-borrow",
         "tutorials/repay-loan",
@@ -30,6 +32,7 @@ module.exports = {
     {
       type: "category",
       label: "Guides",
+      collapsed: false,
       items: [
         "newguides/choosing-a-strategy",
         "newguides/understanding-redemptions",

@@ -5,6 +5,7 @@ module.exports = {
     {
       type: "category",
       label: "Architecture",
+      collapsed: false,
       items: [
         "architecture/overview",
         "architecture/design-goals",
@@ -14,6 +15,7 @@ module.exports = {
     {
       type: "category",
       label: "Core Modules",
+      collapsed: false,
       items: [
         "transmuter/overview",
         "transmuter/redemption-mechanics",
@@ -25,11 +27,13 @@ module.exports = {
     {
       type: "category",
       label: "Smart Contracts",
+      collapsed: false,
       items: ["contracts/ethereum", "contracts/optimism", "contracts/arbitrum"],
     },
     {
       type: "category",
       label: "Integrating Alchemix",
+      collapsed: false,
       items: [
         "integration/using-alassets",
         "integration/integrate-myt",
