@@ -2,9 +2,9 @@
 sidebar_position: 5
 ---
 
-TODO
-
 # 🍴 Friendly Fork Initiative
+
+TODO
 
 Alchemix V3 is published under a Business Source License (BUSL) such that while the codebase is source available, any commercial deployment needs to be approved by the Alchemix Association.
 
