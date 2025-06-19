@@ -7,12 +7,12 @@
 /* ─── Light theme ─────────────────────────────────────── */
 :root {
   --ifm-color-primary: #f5c09a;
-  --ifm-color-primary-dark: #f3b283;
-  --ifm-color-primary-darker: #f0a36c;
-  --ifm-color-primary-darkest: #ee9554;
-  --ifm-color-primary-light: #f7ceb1;
-  --ifm-color-primary-lighter: #faddc8;
-  --ifm-color-primary-lightest: #fcebe0;
+  --ifm-color-primary-dark: #f5c09a;
+  --ifm-color-primary-darker: #f5c09a;
+  --ifm-color-primary-darkest: #f5c09a;
+  --ifm-color-primary-light: #f5c09a;
+  --ifm-color-primary-lighter: #f5c09a;
+  --ifm-color-primary-lightest: #f5c09a;
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -20,13 +20,13 @@
 
 /* ─── Dark theme ──────────────────────────────────────── */
 [data-theme="dark"] {
-  --ifm-color-primary: #f8d4ba;
+  --ifm-color-primary: #f5c09a;
   --ifm-color-primary-dark: #f5c09a;
-  --ifm-color-primary-darker: #f3b283;
-  --ifm-color-primary-darkest: #f0a36c;
-  --ifm-color-primary-light: #fae2d1;
-  --ifm-color-primary-lighter: #fdf1e8;
-  --ifm-color-primary-lightest: #ffffff;
+  --ifm-color-primary-darker: #f5c09a;
+  --ifm-color-primary-darkest: #f5c09a;
+  --ifm-color-primary-light: #f5c09a;
+  --ifm-color-primary-lighter: #f5c09a;
+  --ifm-color-primary-lightest: #f5c09a;
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
 }

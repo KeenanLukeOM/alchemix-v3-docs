@@ -32,15 +32,7 @@ In addition to third-party audits, Alchemix V3 benefits from internal security p
 
 - **Extensive Testing:** Full unit test coverage and invariant testing suites.
 - **Formal Verification:** Applied where appropriate for high-value components.
-- **Code Reviews:** Multi-stage reviews by multiple internal contributors.
-- **Simulation Environments:** Forked mainnet testing and fuzzing.
-
-### 🛡 Bug Bounties
-
-We encourage responsible disclosure through our [bug bounty program](https://immunefi.com/bug-bounty/alchemix/information/), operated via Immunefi.
-
-- **Max bounty:** Up to $300,000 depending on severity.
-- **Scope:** You can check the full scope [here](https://immunefi.com/bug-bounty/alchemix/scope/#top).
+- **Code Reviews:** Multi-stage reviecope [here](https://immunefi.com/bug-bounty/alchemix/scope/#top).
 
 ### 🔄 Upgradeability & Timelocks
 
@@ -66,3 +58,12 @@ We continuously monitor and improve the protocol through:
 - [Security FAQ](#)
 - [GitHub – Contracts Repo](#)
 - [Audit Archive / Summary Page](#)
+  ws by multiple internal contributors.
+- **Simulation Environments:** Forked mainnet testing and fuzzing.
+
+### 🛡 Bug Bounties
+
+We encourage responsible disclosure through our [bug bounty program](https://immunefi.com/bug-bounty/alchemix/information/), operated via Immunefi.
+
+- **Max bounty:** Up to $300,000 depending on severity.
+- **Scope:** You can check the full s
