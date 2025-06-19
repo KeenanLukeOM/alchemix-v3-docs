@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🔥 Liquidate your loan
+# Liquidate your loan
 
 One of the great advantages Alchemix loans bring is that there is always a way to exit your position, even if you don’t have funds in your wallet to make a repayment.
 

@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🌙 Marketing Material
+# Marketing Material
 
 ## Marketing Material
 

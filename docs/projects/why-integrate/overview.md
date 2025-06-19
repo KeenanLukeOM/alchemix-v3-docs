@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 📈 Overview & Value Proposition
+# Overview & Value Proposition
 
 ## What is Alchemix V3?
 

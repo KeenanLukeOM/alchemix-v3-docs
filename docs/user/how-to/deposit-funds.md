@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# ⚡ Deposit funds
+# Deposit funds
 
 The unique thing about Alchemix loans is that they allow you to leverage your wealth without any risk of liquidation. Another way to put this is that Alchemix lets you borrow against an asset without carrying the risk of losing your collateral in the event of a market crash.
 

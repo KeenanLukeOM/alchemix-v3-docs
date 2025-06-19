@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 💱 Financial Reports
+# Financial Reports
 
 Quarterly financial reports.
 

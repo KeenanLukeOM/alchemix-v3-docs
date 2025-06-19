@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 module.exports = {
   tutorialSidebar: [
-    { type: "doc", id: "index", label: "🧑‍💻 Dev Overview" },
+    { type: "doc", id: "index", label: "Dev Overview" },
     {
       type: "category",
       label: "Architecture",

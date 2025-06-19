@@ -20,7 +20,7 @@ layout:
     visible: true
 ---
 
-# ⚠️ Risk & Counterparties
+# Risk & Counterparties
 
 The purpose of this article is to go over the risks that various types of users of the Alchemix system take on when the system is functioning as intended. This list is not intended to be exhaustive, as certain risks are inherent to DeFi and Crypto in general, such as smart contract risk. For information about other types of risks, see [Multisig Admin Rights](https://alchemix-finance.gitbook.io/user-docs/alchemix-dao/the-alchemix-dao/governance-process/multisig-admin-rights), [Audits](https://alchemix-finance.gitbook.io/user-docs/resources/audits-and-reports), and [Vault Losses and Collateral De-pegging](https://alchemix-finance.gitbook.io/user-docs/resources/guides/vault-losses-and-collateral-de-pegging).
 

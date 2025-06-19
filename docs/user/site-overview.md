@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🌐 Site Overview
+# Site Overview
 
 ## Site overview
 

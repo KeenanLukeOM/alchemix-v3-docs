@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# ⚗️ The AMO: The Elixir
+# The AMO: The Elixir
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt="" width="563"></img></figure>
 

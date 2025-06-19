@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🌟 Repay your loan
+# Repay your loan
 
 Alchemix loans are fully flexible. Your funds are never locked and there are always options that allow you to release your deposits.
 

@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🌉 Bridging assets to other chains
+# Bridging assets to other chains
 
 ## Introduction to bridging <a href="#introduction-to-bridging" id="introduction-to-bridging"></a>
 

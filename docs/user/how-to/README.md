@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🦉 How to
+# How to
 
 ## Learn How to Navigate The Alchemix Platform
 

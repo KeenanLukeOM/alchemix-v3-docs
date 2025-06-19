@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# ⚖️ The Transmuter, Elaborated
+# The Transmuter, Elaborated
 
 The Transmuter is actually composed of two separate components: The TransmuterBuffer and the Transmuter.
 

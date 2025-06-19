@@ -4,7 +4,7 @@ module.exports = {
     {
       type: "doc",
       id: "index",
-      label: "📜 Introduction",
+      label: "Introduction",
     },
     {
       type: "category",

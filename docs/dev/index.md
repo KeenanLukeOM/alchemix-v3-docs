@@ -4,7 +4,7 @@ sidebar_position: 1
 
 import AlchemixStats from "@site/src/components/AlchemixStats";
 
-# 🧑‍💻 Dev Overview
+# Dev Overview
 
 Alchemix lets you instantly access loans representing your collateral's future yield. Over time, the interest your deposit earns is used to repay your debt automatically. Alchemix loans are self-repaying, interest-free, and non-liquidating.
 

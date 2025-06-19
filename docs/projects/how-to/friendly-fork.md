@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# 🍴 Friendly Fork Initiative
+# Friendly Fork Initiative
 
 TODO
 

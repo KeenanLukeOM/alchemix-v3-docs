@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🕵️ Audits & Reports
+# Audits & Reports
 
 ## Audits
 

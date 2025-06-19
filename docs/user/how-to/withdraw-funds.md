@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🍀 Withdraw funds
+# Withdraw funds
 
 When you want to move your funds back into your wallet you’ll need to call the ‘withdraw’ function.
 

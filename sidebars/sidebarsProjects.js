@@ -3,7 +3,7 @@ module.exports = {
   tutorialSidebar: [
     // —————————————————————————————
     // Landing page
-    { type: "doc", id: "index", label: "📘 Welcome" },
+    { type: "doc", id: "index", label: "Welcome" },
 
     //   Why Integrate
     {

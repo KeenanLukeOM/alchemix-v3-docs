@@ -2,4 +2,4 @@
 sidebar_position: 3
 ---
 
-# 🧬 V2 Migration
+# V2 Migration

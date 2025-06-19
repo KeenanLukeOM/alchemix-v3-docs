@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🍄 Take a Self-Repaying Loan
+# Take a Self-Repaying Loan
 
 Now that you’ve made a deposit into Alchemix, your deposit will automatically start earning yield. You can choose to borrow against it or you can leave it to work earning credit.
 

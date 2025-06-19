@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 🔄 Migrate between vaults
+# Migrate between vaults
 
 <!-- {% hint style="info" %} -->
 
