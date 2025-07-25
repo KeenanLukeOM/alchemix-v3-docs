@@ -2,4 +2,4 @@
 sidebar_position: 3
 ---
 
-# Case Studies
+# Integrate The Transmuter

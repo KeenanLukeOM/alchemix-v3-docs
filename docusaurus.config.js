@@ -73,7 +73,20 @@ const config = {
         routeBasePath: "dev", // served at /dev
         sidebarPath: require.resolve("./sidebars/sidebarsDev.js"),
         editUrl:
-          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/devdocs/",
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/dev/",
+      },
+    ],
+
+    // — Governance docs @ /governance
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "governance",
+        path: "docs/governance",
+        routeBasePath: "governance",
+        sidebarPath: require.resolve("./sidebars/sidebarsGovernance.js"),
+        editUrl:
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/governance/",
       },
     ],
 
@@ -86,7 +99,7 @@ const config = {
         routeBasePath: "projects",
         sidebarPath: require.resolve("./sidebars/sidebarsProjects.js"),
         editUrl:
-          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/contracts/",
+          "https://github.com/keenanlukeom/alchemix-v3-docs/edit/main/docs/projects/",
       },
     ],
 
@@ -119,24 +132,31 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar", // from sidebarsUser.js
-            docsPluginId: "user", // must match plugin id
+            sidebarId: "tutorialSidebar",
+            docsPluginId: "user",
             position: "left",
-            label: "For Users",
+            label: "Users",
           },
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar", // from sidebarsDev.js
+            sidebarId: "tutorialSidebar",
             docsPluginId: "dev",
             position: "left",
-            label: "For Devs",
+            label: "Developers",
           },
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar", // from sidebarsProjects.js
+            sidebarId: "tutorialSidebar",
+            docsPluginId: "governance",
+            position: "left",
+            label: "Governance",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
             docsPluginId: "projects",
             position: "left",
-            label: "For Projects",
+            label: "Integrations",
           },
           {
             href: "https://github.com/KeenanLukeOM/alchemix-v3-docs",

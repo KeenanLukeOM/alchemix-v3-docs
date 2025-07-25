@@ -13,7 +13,6 @@ module.exports = {
       items: [
         "why-integrate/overview",
         "why-integrate/use-cases",
-        "why-integrate/case-studies",
         "why-integrate/feature-comparison",
       ],
     },
@@ -23,13 +22,7 @@ module.exports = {
       type: "category",
       label: "How to Integrate",
       collapsed: false,
-      items: [
-        "how-to/integration-options",
-        "how-to/getting-started",
-        "how-to/architecture-diagram",
-        "how-to/supported-networks",
-        "how-to/friendly-fork",
-      ],
+      items: ["how-to/getting-started", "how-to/friendly-fork"],
     },
 
     //   Support
@@ -37,7 +30,11 @@ module.exports = {
       type: "category",
       label: "Support",
       collapsed: false,
-      items: ["support/co-marketing", "support/security"],
+      items: [
+        "support/brand-assets",
+        "support/co-marketing",
+        "support/security",
+      ],
     },
 
     //   Contact & Onboarding
@@ -50,7 +47,6 @@ module.exports = {
       ],
     },
 
-    "testimonials",
     "faq",
   ],
 };

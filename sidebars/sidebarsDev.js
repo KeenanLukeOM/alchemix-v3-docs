@@ -37,7 +37,9 @@ module.exports = {
       items: [
         "integration/using-alassets",
         "integration/integrate-myt",
-        "integration/faq",
+        "integration/integrate-transmuter",
+        "integration/integrate-alchemist",
+        "integration/grants-program",
       ],
     },
     "faq",
