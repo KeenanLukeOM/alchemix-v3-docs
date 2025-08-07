@@ -1,11 +1,14 @@
 import React from "react";
 import { useLocation } from "@docusaurus/router";
+import useIsBrowser from "@docusaurus/useIsBrowser";
 
 export default function AskChatGPTButton() {
+  const isBrowser = useIsBrowser();
   const { pathname, search, hash } = useLocation();
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
 
-  const pageUrl = `${origin}${pathname}${search}${hash}`;
+  if (!isBrowser) return null;
+
+  const pageUrl = window.location.href;
 
   const prompt =
     `Please research and analyze this page: ${pageUrl} ` +
