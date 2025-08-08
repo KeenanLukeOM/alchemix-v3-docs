@@ -4,34 +4,35 @@ sidebar_position: 1
 
 # Use Cases
 
-TODO
-
 ## DAOs & Treasuries
 
-- Deposit idle treasury assets into the Alchemix Meta Yield Token to generate yield.
-- Deposit alAssets into the transmuter to generate a fixed return on treasury assets.
-- Safe borrowing against your collateral to create a self-repaying treasury.
+Treasury managers can park idle ETH or USDC in the Meta-Yield Token (MYT) to earn a diversified return while assets remain fully on-chain. When liquidity is required, the same collateral mints alAssets that can be swapped for operating capital, vault yield then repays the debt. Any surplus alAssets can enter the Transmuter to secure a predictable, fixed-rate gain.
 
-## Money Markets
+Example flow:
 
-- alAssets as collateral acts as a proxy to enable V3's high yielding MYT to be used as collateral within Defi, giving V3 users additional choice and use cases.
-- Money markets provide alternative forms of leverage, giving users more options when using V3.
+| Action                             | Result                                    |
+| ---------------------------------- | ----------------------------------------- |
+| Deposit 10,000 ETH → MYT           | Treasury begins earning blended yield     |
+| Mint 9,000 alETH, swap to stables  | 90% LTV runway without selling core asset |
+| Vault yield and redemptions accrue | Debt balance shrinks automatically        |
+| Excess alETH → Transmuter          | Locks in fixed return                     |
+
+## Money-Market Protocols
+
+Listing alUSD and alETH as collateral gives borrowers indirect access to MYT yield without the platform itself managing strategies. Because alAssets trade close to face value and carry no variable interest, they fit neatly into existing risk engines while opening new leverage paths for users.
 
 ## Vault Curators
 
-- Automated strategies can be created for inclusion within the MYT, allowing you to bring sophisticated strategies to Alchemix V3 and take a slice of the yield generated from them.
+Strategy designers can submit new ERC-4626 modules for inclusion in the MYT basket. Once approved by governance, the module earns a slice of generated yield, providing curators with recurring revenue and improving the vault’s risk-adjusted return.
 
-## Defi Onboarders
+## DeFi Onboarders
 
-- Enable V3 on your UI to broaden your defi offering to your users.
+Wallets, dashboards, and on-ramps can integrate Alchemix V3 to expose end users to automated yield, self-repaying credit, and fixed-rate redemptions, broadening product coverage without maintaining strategies in-house.
 
 ## Yield Aggregators
 
-- Integrate Alchemix Vaults into your aggregation strategies tap into one of the best risk adjusted yield sources in defi.
-- Offer Alchemix's vaults to your users as an additional vault product and take a fee.
+Aggregators can route deposits into Alchemix vaults to capture dependable ETH or USD denominated yield. The position can stand alone or be folded into a layered product, allowing the aggregator to charge a performance or management fee while delivering competitive returns.
 
 ## Yield Hunters
 
-- Free leverage on risk adjusted defi yields.
-- Fixed yield transmuter yields.
-- Zero IL LP opportunities.
+Power users can stack three angles, looped leverage on risk-adjusted yield, fixed-rate gains by buying discounted alAssets for Transmuter redemption, and like-for-like liquidity pools that eliminate impermanent loss. This creates a toolkit that delivers both predictable safe income and optional upside without variable-rate complications.

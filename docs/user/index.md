@@ -4,57 +4,77 @@ sidebar_position: 1
 
 import AlchemixStats from "@site/src/components/AlchemixStats";
 
-# Alchemix
+# Getting started with Alchemix
 
-Alchemix lets you instantly access loans representing your collateral's future yield. Over time, the interest your deposit earns is used to repay your debt automatically. Alchemix loans are self-repaying, interest-free, and non-liquidating.
+![](/img/landing-01.webp)
 
-> **Alchemix gives you DeFi loans that transform future yield into present-day capital.**
+Alchemix is your unified platform for saving, borrowing, and earning fixed yield, all in one place. Built on years of iteration since launching the original self-repaying loan in 2021, Alchemix v3 brings all three pillars together with a smarter, more flexible design. The protocol allows you to:
 
-Explore Alchemix's diverse collateral strategies to find the best self-repaying loan for you on our [**main website.**](https://alchemix.fi/)
+- **Save and grow –** deposit ETH or USDC and let our vault invest across diversified strategies.
 
-# The Benefits of Alchemix
+- **Borrow up to 90% LTV –** access liquidity now while accrued yield and scheduled redemptions steadily reduce your balance.
 
-- **Maximize Your Assets:** Maintain exposure to your yield-bearing assets while accessing immediate value—spend your future yield today.
+- **Earn fixed-rate yield –** lock in predictable returns through fixed term redemptions of alETH or alUSD.
 
-- **Diverse Collateral Strategies:** Complete flexibility to choose between any integrated yield strategies.
+## 1. Grow Savings with Vaults
 
-- **No Forced Liquidations:** Your loan can't be forcibly closed by anyone, not even the protocol. You can self-liquidate anytime by repaying your debt with your collateral.
+**How it works**
 
-- **Complete Freedom:** Your position remains accessible at all times, with no locking or deposit/withdrawal fees. You can repay your debt whenever you choose or let it repay itself over time.
+Deposit ETH or USDC into a vault to receive Meta-Yield Tokens (MYT). Each MYT represents a share of a portfolio of yield strategies chosen by Alchemix and is rebalanced over time. Yield accrues continuously and is reflected in the redemption value of MYT.
 
----
+### Key Points
 
-# Get Your First Self-Repaying Loan
+|             |                                              |
+| ----------- | -------------------------------------------- |
+| Asset types | ETH, USDC                                    |
+| Strategy    | Diversified, tuned for risk-adjusted returns |
+| Lock-up     | None, withdraw at any time                   |
 
-- [Watch the Alchemix cinematic ad](https://www.youtube.com/embed/FlWP9FC8C3c?autoplay=1)
+Learn more about Vaults and MYT →
 
-- [Borrow using Alchemix](https://alchemix.fi/)
+## 2. Access Credit with Self-Repaying Loans
 
-# Quick Start Guide
+Need liquidity but don’t want to sell your assets? Borrow Alchemix’s synthetic counterpart of your deposit and let your future yield repay the balance.
 
-1. **Deposit to Earn & Borrow**
+### Key Points
 
-   Deposit your collateral into your preferred yield strategy to start earning interest, and be able to take out a loan. Use your deposit to borrow and receive alAssets while your deposit earns interest.
+|                  |                                                                                                                                                                                                                                                              |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Borrowable asset | alETH or alUSD                                                                                                                                                                                                                                               |
+| Maximum LTV      | 90% of deposited collateral                                                                                                                                                                                                                                  |
+| Liquidations     | Liquidations only apply if the MYT value drops below your loan value. This occurs if a strategy returns a negative yield or, for example, a strategy gets hacked. Your ETH or USD is deposited into the MYT and the MYT becomes your collateral. Learn more. |
+| Early Repayment  | Optional at any time                                                                                                                                                                                                                                         |
 
-2. **Swap alAsset**
+Typical uses include financing a purchase, leveraging/looping yield, or bridging short-term opportunities without disrupting long-term holdings.
 
-   Swap the alAsset to any other token via a DEX or DEX Aggregator to access the value of your loan. alAssets can also be used directly on some DeFi protocols.
+Learn more about Self-Repaying Loans →
 
-3. **Wait, Withdraw, Borrow, Repay, or Self-Liquidate**
+## 3. Lock In Fixed Returns with the Transmuter
 
-   Your chosen yield strategy will earn interest on the full initial deposit. When the chosen strategy earns yield, your share of the yield is used to repay your debt over time automatically. Manage your loan as needed, with the flexibility to withdraw principal, borrow more, repay, or self-liquidate at any time.
+The Transmuter lets users deposit alAssets and, after a fixed term, redeem an equivalent amount of the underlying asset—via Meta-Yield Tokens (MYT), which act as an intermediary claim.
 
-![alt text](image.png)
-**The Alchemist Flow.** Deposit your collateral to Alchemix to earn credit, borrow synthetic assets to spend, or save your capital and let your credit accrue.
+- **Predictable returns** - redemption price and date are known upfront.
 
-![alt text](image-1.png)
-**Alchemix Collateral.** These are the types of underlying collateral assets that Alchemix supports. Alchemix offers a diverse selection of yield strategies for each underlying asset.
+- **Peg stability** - arbitrage incentives help to keep alAssets near parity.
 
-# Learn more
+- **Protection for LPs** - stable asset prices and redemption opportunities help offset impermanent loss.
 
-- Guides
-- How to
+**Example**: If alUSD trades at 0.98 USDC and the current redemption period is three months, purchasing alUSD and redeeming it yields an annualised return of roughly 8%.
 
-# Alchemix Stats Fetch Test
+Under normal conditions, the interface unwraps that MYT to the underlying token for you. If liquidity is momentarily tight, the contract may return the MYT itself. You can either hold it until unwrapping is available or unwrap manually once the queue clears.
+
+Learn more about the Transmuter and Redemptions →
+
+## Next Steps
+
+1. Visit [https://alchemix.fi/](https://alchemix.fi).
+
+2. Stay informed with our Guides.
+
+3. Follow along with our Tutorials.
+
+4. Learn more with our Key Concepts.
+
+## Alchemix Stats Fetch Test
 
 <AlchemixStats />

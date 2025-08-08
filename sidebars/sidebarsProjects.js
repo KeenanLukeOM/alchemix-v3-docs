@@ -10,11 +10,7 @@ module.exports = {
       type: "category",
       label: "Why Integrate",
       collapsed: false,
-      items: [
-        "why-integrate/overview",
-        "why-integrate/use-cases",
-        "why-integrate/feature-comparison",
-      ],
+      items: ["why-integrate/overview", "why-integrate/use-cases"],
     },
 
     //  How to Integrate
@@ -22,7 +18,7 @@ module.exports = {
       type: "category",
       label: "How to Integrate",
       collapsed: false,
-      items: ["how-to/getting-started", "how-to/friendly-fork"],
+      items: ["how-to/friendly-fork"],
     },
 
     //   Support
@@ -46,7 +42,5 @@ module.exports = {
         "contact/apply-to-partner", // Apply to Partner
       ],
     },
-
-    "faq",
   ],
 };

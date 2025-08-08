@@ -19,37 +19,58 @@ layout:
 
 # FAQ
 
+Use this page as a quick lookup for the questions we hear most often. It explains core ideas, such as borrowing limits, earmarked debt, the redemption rate, and how they show up in the interface. If you need deeper detail, each answer links back to the full guide or tutorial that covers the topic in depth.
+
 <details>
 
 <summary>
-  W<strong>ha</strong>t is Alchemix?
+  What is an alAsset?
 </summary>
 
-Alchemix is a pioneering DeFi platform and community DAO that empowers users to unlock the potential of their assets through Self-Repaying, non-liquidating loans. Alchemix reimagines the traditional lending and borrowing experience, offering a secure and innovative way to balance spending and saving while mitigating liquidation risks.
+An alAsset is the synthetic token you borrow from Alchemix.
+
+- alUSD mirrors USDC.
+- alETH mirrors ETH.
+
+They track their underlying asset but can trade below, or in rare circumstances above, 1:1 on the open market.
+
+Learn more about alAssets →
 
 </details>
 
 <details>
 
-<summary>How does the Alchemix self-repaying loan mechanism work?</summary>
+<summary>How much can I borrow?</summary>
 
-Users can deposit supported assets into the platform and earn interest on their deposits. Through this process, users gain access to a credit-like facility that allows them to borrow up to 50% of the value of their assets. The interest earned on the total initial deposit automatically repays any outstanding debt, eliminating the need for monthly payments. Additionally, this innovative like-for-like asset borrowing mechanism ensures there is no risk of liquidation, providing users with peace of mind and a seamless DeFi experience.
+You can borrow up to 90% loan-to-value (LTV) of your deposited collateral. The exact limit is shown on each vault page.
 
-</details>
-
-<details>
-
-<summary>What collateral types are supported by Alchemix?</summary>
-
-Alchemix currently supports a variety of collateral types, including ETH, DAI, USDC, USDT, and FRAX. These assets can be used as collateral for obtaining self-repaying loans on the platform. You can also deposit yield-bearing tokens.
+Learn more about LTV →
 
 </details>
 
 <details>
 
-<summary>How much can I borrow against my deposited collateral?</summary>
+<summary>How does my loan repay itself?</summary>
 
-When you deposit collateral on Alchemix, you can borrow up to 50% of the value of the corresponding synthetic alAsset. For example, if you deposit ETH, you can borrow alETH worth up to 50% of the value of your deposited ETH, even if the alETH to ETH ratio differs from 1:1.
+Your MYT collateral grows in value as its underlying strategies earn yield. On each scheduled redemption date the Transmuter swaps a slice of that collateral, equal in value to the queued alAssets earmarked for your position, and applies the proceeds to your outstanding debt.
+
+Between redemptions the full collateral balance continues compounding, so the loan principal can only decline unless you choose to borrow more.
+
+Learn more about Self-Repaying Loans →
+
+</details>
+
+<details>
+
+<summary>What is earmarked debt?</summary>
+
+When a redemption cycle starts, the protocol reserves (earmarks) part of every open loan.
+
+- The earmarked slice is fixed until the cycle ends.
+- It still earns yield for you until settlement.
+- Repaying an earmarked slice early requires MYT.
+
+Learn more about redemptions →
 
 </details>
 
@@ -65,99 +86,105 @@ Absolutely! Alchemix allows you the flexibility to exit or repay your loan at an
 
 <details>
 
-<summary>How long will it take for my loan to fully repay itself?</summary>
+<summary>What is the redemption rate?</summary>
 
-The repayment timeline for Alchemix loans depends on the variable nature of DeFi yields. Consequently, providing an exact timeframe for the loan to fully repay itself is challenging. However, a rough estimate can be made based on the Loan-to-Value (LTV) ratio and the interest rate. For example, a 50% LTV loan at 10% APR would take approximately 5 years to repay.
+TODO
 
-0xDefi has a tool to calculate how long your loan will take to repay [here](https://dyor.fi/alcx/calculator). This is a third-party tool, so please use it at your own risk.
-
-</details>
-
-<details>
-
-<summary>Is Alchemix audited?</summary>
-
-Yes, Alchemix has undergone various audits, conducted by reputable auditing firms, including Runtime Verification, Code4rena, and Immunefi.
-
-Alchemix v2 was audited by Runtime Verification as well as a[ Code4rena contest](https://code4rena.com/reports/2022-05-alchemix). Alchemix also has an ongoing[ bug bounty program through Immunifi](https://immunefi.com/bounty/alchemix/).
-
-See our [Audits here](https://alchemix-finance.gitbook.io/user-docs/resources/audits-and-reports)
+Learn more about the redemption rate →
 
 </details>
 
 <details>
 
-<summary>Can I be liquidated?</summary>
+<summary>Can I repay early?</summary>
 
-No, you cannot be liquidated by third parties on the Alchemix platform. Your debt is denominated in the same currency as the collateral, which means that the price fluctuations of the asset do not impact your vault position. Regardless of market volatility, your vault positions remain secure, and you can have peace of mind knowing that your assets are protected from liquidation.
+Yes. Open the Repay tab in a vault and choose:
 
-</details>
+- alAsset to clear normal debt.
+- MYT to clear earmarked or normal debt.
+- ETH or USDC for convenience.
 
-<details>
-
-<summary>On what networks is Alchemix available?</summary>
-
-Alchemix is available on multiple networks, providing users with options for accessing its services. Currently, Alchemix can be accessed on Ethereum Mainnet, Optimism, and Arbitrum.
-
-An up-to-date list of available networks may be viewed on the network selector at the upper-left of the UI.
+Bundling with the cart icon lets you combine several actions in one transaction.
 
 </details>
 
 <details>
 
-<summary>What can I do with my alAssets?</summary>
+<summary>What happens if I borrow alAssets and immediately deposit them in the Transmuter?</summary>
 
-The primary use case for your alAsset (e.g., alUSD, alETH) is to swap it for another asset. You can achieve this by utilizing decentralized exchanges, such as [curve.fi](https://curve.fi/), or popular swap aggregators like [Matcha](https://matcha.xyz/), [Zapper](https://zapper.xyz/), or [Paraswap](https://www.paraswap.io/). These platforms enable you to trade your alAssets for various other tokens, providing you with the flexibility to diversify your portfolios or acquire specific tokens based on your investment preferences.
+In this case, you interact with both sides of the system at once:
 
-In addition to swapping, you can leverage your alAssets to provide liquidity on certain decentralized exchanges, such as Curve, Saddle, and Velodrome, and earn gauge rewards. You can earn yield directly with your alAssets, should you choose. Keep up to date with the latest opportunities at [https://alchemix-stats.com/earn](https://alchemix-stats.com/earn)
+- **Borrower side** – You mint alAssets and may “pay” a market discount, assuming the alAsset is below 1:1 at the time.
+- **Redeemer side** – You lock those alAssets for a fixed return and secure their full value.
 
-</details>
+Most of the time, the cost and reward cancel out, so the net effect is similar to leaving your collateral idle - if not net-negative due to fees. It can make sense when:
 
-<details>
+- The term is very short and you prefer a sure 1:1 rate on your loan compared to selling on a DEX, or;
+- Liquidity is thin, and the market discount is unusually deep.
 
-<summary>How can I participate in the governance of Alchemix?</summary>
-
-Participating in the governance of Alchemix allows you to actively contribute to the decision-making process and shape the future direction of the protocol. To participate in governance, you need to use ALCX tokens to vote. You can also join discussions in the governance channels of the Alchemix Discord server.
-
-</details>
-
-<details>
-
-<summary>What is the Transmuter?</summary>
-
-The Transmuter is an alAsset price stability module. Users can deposit alAssets, and over time, the Transmuter will gradually convert the alAsset to the corresponding underlying token on a 1:1 basis. [Read more here](https://alchemix-finance.gitbook.io/user-docs/alchemix-ecosystem/transmuter).
+Learn more about the transmuter and market discounts →
 
 </details>
 
 <details>
 
-<summary>Can I borrow any token against my Alchemix Deposit?</summary>
+<summary>Can I withdraw from the Transmuter early?</summary>
 
-The short answer is no. When you deposit into an Alchemist contract in Alchemix, you can only borrow the corresponding synthetic alAsset against your deposit (e.g., alETH for ETH). However, you can take your alAsset and swap it in the market for whatever tokens you want.
+Yes, but an early exit applies a penalty that reduces your return. The pop-up shows the exact amount before you confirm.
+
+Learn more about early exits →
+
+</details>
+
+<details>
+
+<summary>What fees does Alchemix charge?</summary>
+
+TODO
+
+Learn more about fees →
+
+</details>
+
+<details>
+
+<summary>What if a vault strategy loses funds?</summary>
+
+Loss handling is different for each participant:
+
+- **Vault users** – If the MYT backing your collateral drops in value, the protocol can liquidate positions that exceed the liquidation LTV.
+- **Transmuter users** – Redemptions continue at 1:1 unless the loss results in bad debt. In that case, you can claim a partial redemption immediately or wait until the bad debt is cleared for full value.
+
+</details>
+
+<details>
+
+<summary>Do I ever lose yield if a portion of my debt is earmarked?</summary>
+
+Never. Earmarked collateral continues to earn you yield until the moment it is redeemed. This delayed settlement creates the temporal advantage, extra yield you would not receive in most other lending platforms.
+
+Learn more about Temporal Advantage →
+
+</details>
+
+<details>
+
+<summary>Who controls the system?</summary>
+
+TODO
+
+Learn more about security and permissions →
 
 </details>
 
 <details>
 
 <summary>
-  When will 'Token X' be available as collateral on Alchemix? When will you be
-  on 'Chain X'?
+  Where can I see live data?
 </summary>
 
-New collateral and new chains are subject to governance approval and must also overcome technical, financial, operational, and partnership hurdles. As a result, they do not have fixed timelines. Security and adherence to proper processes will always take precedence over meeting specific deadlines.
+Current redemption rate, queued alAssets, vault APRs, and historic term stats are displayed directly in the main dashboard and the Earn page.
+
+View live data →
 
 </details>
-
-<details>
-
-<summary>How can I contact the Alchemix team for support or inquiries?</summary>
-
-Discord is the primary platform for engaging with the Alchemix team and the wider Alchemix community. Whether you have questions, comments, or suggestions about Alchemix, reaching out in the #support channel in our official Discord is the best way to receive prompt and helpful responses.
-
-[Join our Discord here.](https://discord.com/invite/alchemix)
-
-</details>
-
-<figure>
-  <img src="../../.gitbook/assets/header_02_test.png" alt=""></img>
-</figure>

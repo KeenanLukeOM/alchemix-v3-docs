@@ -4,38 +4,33 @@ sidebar_position: 1
 
 # Overview & Value Proposition
 
-## What is Alchemix V3?
+## What Alchemix v3 Delivers
 
-Alchemix V3 is a yield aggregation and self-repaying CDP platform that turns user collateral into a yield-bearing asset. It offers some of the best risk-adjusted yields in DeFi while enabling users to borrow against their collateral.
+Alchemix V3 turns a single deposit of ETH or USDC into two complementary positions. First, the funds are wrapped into a Meta-Yield Token (MYT) that earns yield across a diversified set of strategies curated by the Alchemix DAO. That same collateral unlocks a credit line, allowing users to mint synthetic alAssets, alETH or alUSD, worth up to ninety percent of the deposit.
 
-V3 introduces an enhanced Transmuter, providing a significantly stronger peg mechanism for alAssets. This unlocks new yield opportunities and fortifies the overall protocol.
+The redesigned Transmuted accepts these alAssets and, on a fixed schedule, returns MYT one-for-one. This mechanism keeps alAssets close to price parity with their underlying assets and created predictable, bond-like yield opportunities for anyone who accumulated alAssets below face value.
 
-Alchemix V3 is designed for anyone interested in generating yield in DeFi. Notable use cases include:
+## Where the Platform Fits
 
-- **DAO Treasury Management** – Fund your runway without selling treasury assets.
-- **Yield Farmers** – Access up to 10x leverage with no interest rates.
-- **Liquidity Providers** – Eliminate impermanent loss on like-for-like alAsset pairs (e.g., `alETH<>frxETH`, `alUSD<>USDC`).
+- **DAO Treasuries** – Raise operating capital without liquidating long-term holdings. DAO’s can mint alAssets, exchange them for their required spending currency, and let the vault yield repay their debt over time.
+
+- **Yield Strategists** – Loop assets for higher leverage. These users can recycle borrowed alAssets back into their vault positions, compounding exposure as high as practical leverage allows, all without facing variable interest rates.
+
+- **Liquidity Providers** – LPs can pair alAssets with another token that tracks the same price (for example, alETH with frxETH) and eliminate impermanent-loss risk as both sides of the pool move in tandem.
 
 ## Core Features
 
-- One ERC-4626 (Alchemist) yield aggregation vault per asset per chain
-- Meta Yield Token (MYT)
-- Redemptions against debt positions
-- 1:1 conversion of alAssets to MYT against the base asset
+| Feature                    | Purpose                                                                                             |
+| -------------------------- | --------------------------------------------------------------------------------------------------- |
+| Alchemist Vault (ERC-4626) | Aggregated yield for each base asset on every supported chain                                       |
+| Meta-Yield Token (MYT)     | Tokenised basket of yield strategies, which can be unwrapped for the underlying assets at any time  |
+| Transmuter                 | Fixed-duration redemptions that stabilise alAsset prices and create predictable return opportunties |
+| Self-repaying CDP          | Debt is automatically retired by vault yield and scheduled redemptions                              |
 
-## Integration Benefits
+## Why Integrate
 
-- Leverage options to fund project runway without selling assets
-- Integrate MYT to offer users the highest risk-adjusted ETH and USD yields
-- Integrate alAssets to tap into the growth of the Alchemix V3 ecosystem
-- Remove impermanent loss from vault strategies
-- Co-marketing: Extend your reach through our ecosystem and social channels
+Integrators gain a capital efficient way to unlock liquidity, a single-token gateway to competitive ETH and USD yields, and access to a growing synthetic-asset economy. Projects that integrate MYT or accept alAssets as collateral benefit from higher total value locked, simplified liquidity-pool management thanks to the absence of impermanent loss on like-for-like pairs, and joint marketing across the Alchemix ecosystem.
 
-### Built for
+## Who Benefits Most
 
-- Users
-- Money Markets
-- Vault Curators
-- DAO Treasuries
-- Yield Farmers
-- Liquidity Providers
+End users seeking passive yield, money-market protocols in search of high-quality collateral, vault curators adding new strategies, DAO treasuries managing runway, leverage-oriented yield farmers, and liquidity providers who want prices on both sides of a pool to move together.
