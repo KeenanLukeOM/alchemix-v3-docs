@@ -6,21 +6,23 @@ sidebar_position: 4
 
 Redemptions convert earmarked collateral into the asset required to repay debt. Two ideas matter:
 
-- **Redemption rate** - how fast the system deleverages your position.
+- **Redemption rate** – how fast the system deleverages your position.
 
-- **Temporal advantage** - the bonus yield you earn while waiting for an earmarked redemption to settle.
+  - **Note:** Because debt and collateral are like kind, deleveraging does not lose the user any money (besides the redemption fee). This is different than many systems that charge interest rates that can at times be higher than the yield you are earning.
+
+- **Temporal advantage** – the bonus yield you earn while waiting for an earmarked redemption to settle.
 
 ## The Redemption Rate
 
-The redemption rate tells borrowers what share of total system debt the Transmuter will retire in one year. A higher rate means loans clear more quickly.
+The redemption rate tells borrowers what share of total system debt redemptions will repay in one year through the Transmuter. A higher rate means loans clear more quickly.
 
 ### What drives this number
 
 | On-chain variable  | Effect on the rate           | Rationale                                                                                                                                          |
 | ------------------ | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Queued alAssets    | ↑ Larger queue → higher rate | More alUSD or alETH waiting in the Transmuter funds more repayments. Arbitrage deposits enlarge this queue when the market price drifts below peg. |
-| Total system debt  | ↓ More debt → lower rate     | A bigger denominator dilutes the impact of a fixed queue.                                                                                          |
-| Transmutation time | ↑ Shorter term → higher rate | Each unit of queued alAsset cycles more often over a year.                                                                                         |
+| Queued alAssets    | ↑ Larger queue → higher rate | More alUSD or alETH waiting in the Transmuter funds more repayments. Arbitrage deposits enlarge this queue when the market price drifts below peg. |
+| Total system debt  | ↓ More debt → lower rate     | A bigger denominator dilutes the impact of a fixed queue.                                                                                          |
+| Transmutation time | ↑ Shorter term → higher rate | Each unit of queued alAsset cycles more often over a year.                                                                                         |
 
 ### Formula
 
@@ -65,10 +67,9 @@ TODO
 |     |     |
 |     |     |
 |     |     |
-|     |     |
 
 ## Further Reading
 
-- **Transmuter Mechanics** - how earmarking and redemption batches work.
+- **Transmuter Mechanics** – how earmarking and redemption batches work.
 
-- **Live And Historic Graphics** - view past and present data directly in the dapp.
+- **Live And Historic Graphics** – view past and present data directly in the dapp.

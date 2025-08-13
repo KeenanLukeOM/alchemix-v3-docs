@@ -52,9 +52,9 @@ Learn more about LTV →
 
 <summary>How does my loan repay itself?</summary>
 
-Your MYT collateral grows in value as its underlying strategies earn yield. On each scheduled redemption date the Transmuter swaps a slice of that collateral, equal in value to the queued alAssets earmarked for your position, and applies the proceeds to your outstanding debt.
+Your MYT collateral grows in value as its underlying strategies earn yield. When a redemption occurs, the Transmuter swaps a portion of that collateral, equal in value to the queued alAssets earmarked for your position, and applies the proceeds to your outstanding debt.
 
-Between redemptions the full collateral balance continues compounding, so the loan principal can only decline unless you choose to borrow more.
+Each position has a maturity date, but redemptions can happen earlier or later depending on user activity. Until a redemption takes place, your full collateral balance continues compounding, and your debt remains unchanged unless you choose to borrow more.
 
 Learn more about Self-Repaying Loans →
 
@@ -64,11 +64,7 @@ Learn more about Self-Repaying Loans →
 
 <summary>What is earmarked debt?</summary>
 
-When a redemption cycle starts, the protocol reserves (earmarks) part of every open loan.
-
-- The earmarked slice is fixed until the cycle ends.
-- It still earns yield for you until settlement.
-- Repaying an earmarked slice early requires MYT.
+When a redemption cycle begins, the protocol gradually reserves (earmarks) a portion of each open loan based on the borrower’s share of total system debt. This earmarked amount is fixed once assigned for the remainder of the cycle and continues earning yield until settlement. If you choose to repay an earmarked slice early, repayment must be made in MYT.
 
 Learn more about redemptions →
 

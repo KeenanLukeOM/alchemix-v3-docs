@@ -8,18 +8,18 @@ The Transmuter lets you redeem alAssets (alUSD, alETH) 1:1 for their underlying 
 
 ## How Transmutations Flow
 
-| Flow     | Context                                                                                                                                                           |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Deposit  | Send alUSD or alETH to the Transmuter contract.                                                                                                                   |
-| Queue    | Each deposit matures after the Transmutation Time set by the DAO. You can exit early, but an early-withdrawal fee applies and you give up the fixed-rate outcome. |
-| Earmark  | The protocol reserves an equal value of MYT from borrower collateral to guarantee your claim.                                                                     |
-| Maturity | You receive 1 asset-worth of MYT from borrowers for every 1 alAsset.                                                                                              |
+| Flow     | Context                                                                                                                                                                        |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Deposit  | Send alUSD or alETH to the Transmuter contract.                                                                                                                                |
+| Queue    | Each deposit matures after the Transmutation Time set by the DAO. You can exit early, but an early-withdrawal fee applies and you give up a portion of the fixed-rate outcome. |
+| Earmark  | The protocol reserves an equal value of MYT from borrower collateral to guarantee your claim.                                                                                  |
+| Maturity | You receive 1 asset-worth of MYT from borrowers for every 1 alAsset.                                                                                                           |
 
 All redeemed alAssets are burned, contracting their supply.
 
 ## Why Discounts Exist
 
-Borrowers often sell newly minted alAssets for working capital, pushing market price slightly below par. The spread between that market price and the Transmuters guaranteed 1:1 accounting creates a fixed-rate opportunity for buyers.
+Borrowers often sell newly minted alAssets for working capital, pushing market price slightly below par. The spread between that market price and the Transmuter’s guaranteed 1:1 accounting creates a fixed-rate opportunity for buyers.
 
 Inside Alchemix, 1 alUSD always offsets 1 USD worth of debt, regardless of its external market price.
 
@@ -38,10 +38,10 @@ Inside Alchemix, 1 alUSD always offsets 1 USD worth of debt, regardless of its e
 
 ## Edge-Case Handling
 
-| Scenario                             | Result                                                                                                    | Your Options                                                                                                   |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Bad debt in Alchemist (exploit, etc) | Redemption pays pro-rata (EG: 0.97:1) until debt is restored.                                             | Claim now and take a haircut, or leave unclaimed. Once debt clears, you may redeem full 1:1.                   |
-| MYT unwrap slippage                  | In some scenarios MYT may not be able to be immediately unwrapped for the underlying. (EG: MYT slippage). | Withdraw MYT from tramsmuter to begin earning yield from it, manually unwrap later facilitated directly by UI. |
+| Scenario                             | Result                                                                                                                | Your Options                                                                                                   |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Bad debt in Alchemist (exploit, etc) | Redemption pays pro-rata (EG: 0.97:1) until debt is restored.                                                         | Claim now and take a haircut, or leave unclaimed. Once debt clears, you may redeem full 1:1.                   |
+| MYT unwrap slippage                  | In some scenarios MYT may not be able to be immediately unwrapped for the underlying. (EG: UI detects high slippage). | Withdraw MYT from tramsmuter to begin earning yield from it, manually unwrap later facilitated directly by UI. |
 
 There is no variable interest and no price-based liquidation affecting Transmuter positions.
 

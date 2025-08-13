@@ -10,11 +10,11 @@ Explore technical documentation for MYT →
 
 ## What is MYT?
 
-- **Tokenised basket**. MYT is an ERC-4626 token that holds deposits of ETH or USDC and routes them into several yield sources.
+- **Tokenised basket.** MYT is a Morpho V2 Vault token that holds deposits of ETH or USDC and routes them into several yield sources.
 
 - **DAO-managed allocation.** The Alchemix DAO selects strategies, sets target weights, and rebalances as markets shift.
 
-- **Built on Morpho V2.** The core vault logic uses Morpho’s lending layer to optimise on-chain execution and safety.
+- **Built on Morpho V2.** The core vault logic uses Morpho’s v2 vaults layer to optimise on-chain execution and safety.
 
 ## Per-Chain Variants
 
@@ -26,7 +26,7 @@ You can view the current strategy breakdowns directly in the UI →
 
 1. Select the MYT that matches your base asset and preferred chain.
 
-2. Deposit ETH or USDC, and the vault will mint MYT at the current exchange rate. As yield accrues, each MYT represents an ever-larger claim on the underlying asset.
+2. Deposit ETH or USDC, and the vault will mint MYT at the current exchange rate. As yield accrues, each MYT represents an increasing claim on the underlying asset.
 
 3. Hold MYT. As strategies earn yield, the redemption value of each token increases.
 

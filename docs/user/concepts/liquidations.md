@@ -16,26 +16,20 @@ Liquidations in Alchemix v3 are a system-wide safety valve, not a per-account pu
 
 ## What can trigger liquidation
 
-TODO
-
-| Event                                                 | Detection Method                               |
-| ----------------------------------------------------- | ---------------------------------------------- |
-| Strategy loss, exploit, or severe slippage inside MYT | Oracle shows MYT NAV is less than system debt. |
-| ANYTHING ELSE??                                       |                                                |
+| Event                                                 | Detection Method                                                 |
+| ----------------------------------------------------- | ---------------------------------------------------------------- |
+| Strategy loss, exploit, or severe slippage inside MYT | Oracle shows MYT NAV is less than system debt.                   |
+| Position exceeds liquidation threshold (95% LTV)      | Oracle shows collateral value vs. debt ratio breaching threshold |
 
 ## How the process works
 
-1. **Shortfall calculation**
+- **Max LTV** – If a position exceeds the max LTV (currently set at 95%), it is eligible for liquidations.
 
-   1. The oracle reports the percentage deficit. (EG: collateral worth 98% of debt, 2% shortfall)
+- **Partial liquidation only** – The protocol liquidates only the amount required to adjust the user’s position back to the defined target LTV, currently set at 85%.
 
-2. **Account ordering**
+- **Multi-step liquidations** – If a position can be made healthy by simply triggering a redemption early, then that is all that will happen and the liquidator will receive a small fee. Otherwise, the early redemption will occur and then the user’s collateral will be used to repay debt, along with a fee paid to the liquidator, down to the target LTV.
 
-   1. Borrowers are ranked by loan-to-value. The highest LTV vaults are liquidated first because removing this collateral cancels more debt than doing so for a low-LTV wallet.
-
-3. **Partial liquidation only**
-
-   1. The protocol liquidates only the amount required to cover the shortfall, and any vaults with a liquidation will have an equivalent portion of their debt burnt in the process.
+- **Liquidator Fee Vault** – Should the user’s collateral not be sufficient on its own to pay a liquidator, there is a separate fee vault that may be funded by any entity (including the DAO) that may be drawn from to pay liquidators.
 
 ## Reading the health bar
 
@@ -48,3 +42,10 @@ The colored bar in the vault UI gives an at-a-glance view of three numbers:
 - **Liq LTV** – the red marker shows the liquidation threshold right now. If MYT ever records a loss, the marker slides left to reflect the reduced backing. If your current LTV remains below this marker, you will not be liquidated.
 
 Day-to-day most users will never see a liquidation. If MYT vaults experience a loss, these mechanisms ensure losses are covered in a transparent and proportional way.
+
+Users are encouraged to study the makeup of the MYT, as well as the risk categories. The DAO sets a maximum % of the MYT that may be allocated to high and medium risk categories. This allows users to set LTVs below liquidation thresholds based on those makeups.
+
+TODO
+
+The current settings are as follows:  
+etc

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Borrowing in Alchemix
 
-After converting ETH or USDC into the Meta-Yield Token, the next step is borrowing. The vault keeps your collateral and lets you mint synthetic assets, alETH or alUSD respectively, worth up to ninety percent of the collaterals face value.
+After converting ETH or USDC into the Meta-Yield Token, the next step is borrowing. The vault keeps your collateral and lets you mint synthetic assets—alETH or alUSD respectively—worth up to ninety percent of the collateral’s face value.
 
 ## How borrowing works
 
@@ -14,31 +14,34 @@ After converting ETH or USDC into the Meta-Yield Token, the next step is borrowi
 
 2. Choose an amount of alAsset to mint. The “max” function will give the maximum value allowable within the bound of 90% LTV.
 
-3. Sign the transaction, Alchemix will mint the requested alAsset directly to your wallet.
+   **Note:** If a yield strategy loses money, you could be liquidated. The LTV at which a liquidation will occur is 95% LTV. Choose your LTV with this in mind.
 
-4. Use the alAsset in any way you like. Swap it for stablecoins, provide liquidity, or loop it back into the vault for further leverage.
+3. Sign the transaction. Alchemix will mint the requested alAsset directly to your wallet.
+
+4. Use the alAsset in any way you like—swap it for stablecoins, provide liquidity, or loop it back into the vault for further leverage.
 
 ## What repays the debt
 
-Your collateral continues to earn yield in your vault. On a fixed schedule set by the DAO, the Transmuter redeems a slice of alAssets held in the system for MYT and applies that value against outstanding debt. When yield plus redemptions equal the amount you borrowed, the loan is cleared without further action on your part.
+Your collateral continues to earn yield in your vault. The DAO sets a period length for redemptions. When a user completes a redemption, a slice of depositors’ MYT collateral is liquidated to fund the redemption, repaying debt equal to the redeemed amount in the process. Given enough time and redemptions, this will eventually clear a user’s entire debt.
 
 Learn more about redemptions →
 
 ## Key Information
 
-| Parameter               | Value or behavior                                                                                          |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Maximum LTV             | 90% of collateral value.                                                                                   |
-| Interest Rate           | Zero. Debt balance only declines, it never accrues new interest.                                           |
-| Repayment sources       | Vault yield, scheduled transmuter redemptions, manual repayments.                                          |
-| Early repayment options | Send alAssets back at any time to reduce or close the loan.                                                |
-| Liquidation             | No liquidations, but high LTV positions could be redeemed early depending on system dynamics. Learn more → |
+| Parameter               | Value or behavior                                                                                                                            |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Maximum LTV             | 90% of collateral value.                                                                                                                     |
+| Interest Rate           | Zero. Debt balance only declines; it never accrues new interest.                                                                             |
+| Repayment sources       | Vault yield, transmuter redemptions, manual repayments.                                                                                      |
+| Early repayment options | Use alAssets to repay the debt at any time.                                                                                                  |
+| Position NFT            | Your position is represented by an NFT available in your wallet after the transaction confirms.                                              |
+| Liquidation             | Liquidations are extremely unlikely, but redemptions are applied to your share of the debt, thus affecting high LTV users more. Learn more → |
 
 ### Why borrow instead of selling?
 
-- **Exposure** – Maintain long-term asset exposure while meeting short-term cash needs.
+- **Exposure** – Maintain exposure to the yield from your asset while deferring the actual sale of the underlying, supporting short-term cash needs.
 
-- **Stable** – Avoid variable interest rates and rollover risk common in other lending markets.
+- **Stable** – Avoid variable interest rates, price-based liquidations, and rollover risk common in other lending markets.
 
 - **IL Protection** – Combine borrowing with like-for-like liquidity pools to generate fees without impermanent loss.
 
