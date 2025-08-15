@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Meta Yield Token (MYT) gives you passive exposure to a curated set of yield strategies without needing to manage positions yourself. Each token represents a share of assets that Alchemix allocates across multiple protocols.
 
-Explore technical documentation for MYT →
+[Explore technical documentation for MYT →](../../dev/myt/meta-yield-token)
 
 ## What is MYT?
 

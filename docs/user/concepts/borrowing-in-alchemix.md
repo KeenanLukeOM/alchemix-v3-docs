@@ -22,9 +22,9 @@ After converting ETH or USDC into the Meta-Yield Token, the next step is borrowi
 
 ## What repays the debt
 
-Your collateral continues to earn yield in your vault. The DAO sets a period length for redemptions. When a user completes a redemption, a slice of depositors’ MYT collateral is liquidated to fund the redemption, repaying debt equal to the redeemed amount in the process. Given enough time and redemptions, this will eventually clear a user’s entire debt.
+Your collateral continues to earn yield in your vault. The DAO sets a period length for redemptions. When a Transmuter user completes a redemption, a slice of depositors’ MYT collateral is liquidated to fund the redemption, repaying debt equal to the redeemed amount in the process. Given enough time and redemptions, this will eventually clear a vault user’s entire debt.
 
-Learn more about redemptions →
+[Learn more about redemptions →](./redemption-rate.md)
 
 ## Key Information
 

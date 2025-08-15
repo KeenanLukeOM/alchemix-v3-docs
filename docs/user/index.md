@@ -14,7 +14,7 @@ Alchemix is your unified platform for saving, earning, borrowing, and fixed-term
 
 - **Earn fixed-rate yield –** lock in predictable returns through fixed-term redemptions of alETH or alUSD.
 
----
+[Explore the Quick Start guide →](./quick-start.md)
 
 ## 1. Grow Savings with Vaults
 
@@ -30,9 +30,7 @@ Deposit ETH or USDC into a vault to receive Meta-Yield Tokens (MYT). Each MYT re
 | Strategy    | Diversified, tuned for risk-adjusted returns |
 | Lock-up     | None, withdraw at any time                   |
 
-Learn more about Vaults and MYT →
-
----
+[Learn more about Vaults and MYT →](./concepts/myt-and-yield.md)
 
 ## 2. Access Credit with Self-Repaying Loans
 
@@ -49,9 +47,7 @@ Need liquidity but don’t want to sell your assets? Borrow Alchemix’s synthet
 
 Typical uses include financing a purchase, leveraging/looping yield, or bridging short-term opportunities without disrupting long-term holdings.
 
-Learn more about Self-Repaying Loans →
-
----
+[Learn more about Self-Repaying Loans →](./concepts/self-repaying-loans.md)
 
 ## 3. Lock In Fixed Returns with the Transmuter
 
@@ -65,18 +61,14 @@ The Transmuter lets users deposit alAssets and, after a fixed term, redeem an eq
 
 Under normal conditions, the interface unwraps that MYT to the underlying token for you. If liquidity is momentarily tight **or has unexpected slippage**, the contract may return the MYT itself. You can either hold it until unwrapping is available or unwrap manually once the queue clears.
 
-Learn more about the Transmuter and Redemptions →
-
----
+[Learn more about the Transmuter and Redemptions →](./concepts/transmuter.md)
 
 ## Next Steps
 
 1. Visit [https://alchemix.fi/](https://alchemix.fi).
-2. Stay informed with our Guides.
-3. Follow along with our Tutorials.
-4. Learn more with our Key Concepts.
-
----
+2. Stay informed with our [Guides](./newguides/risk-considerations.md).
+3. Follow along with our [Tutorials](./tutorials/use-passive-myt.md).
+4. Learn more with our [Key Concepts](./concepts/myt-and-yield.md).
 
 ## Alchemix Stats Fetch Test
 

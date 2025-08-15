@@ -34,7 +34,7 @@ An alAsset is the synthetic token you borrow from Alchemix.
 
 They track their underlying asset but can trade below, or in rare circumstances above, 1:1 on the open market.
 
-Learn more about alAssets →
+[Learn more about alAssets →](./concepts/alAssets)
 
 </details>
 
@@ -44,7 +44,7 @@ Learn more about alAssets →
 
 You can borrow up to 90% loan-to-value (LTV) of your deposited collateral. The exact limit is shown on each vault page.
 
-Learn more about LTV →
+[Learn more about LTV →](./concepts/alAssets#ltv-sensitivity)
 
 </details>
 
@@ -56,7 +56,7 @@ Your MYT collateral grows in value as its underlying strategies earn yield. When
 
 Each position has a maturity date, but redemptions can happen earlier or later depending on user activity. Until a redemption takes place, your full collateral balance continues compounding, and your debt remains unchanged unless you choose to borrow more.
 
-Learn more about Self-Repaying Loans →
+[Learn more about Self-Repaying Loans →](./concepts/self-repaying-loans.md)
 
 </details>
 
@@ -66,7 +66,7 @@ Learn more about Self-Repaying Loans →
 
 When a redemption cycle begins, the protocol gradually reserves (earmarks) a portion of each open loan based on the borrower’s share of total system debt. This earmarked amount is fixed once assigned for the remainder of the cycle and continues earning yield until settlement. If you choose to repay an earmarked slice early, repayment must be made in MYT.
 
-Learn more about redemptions →
+[Learn more about redemptions →](./concepts/redemption-rate.md)
 
 </details>
 
@@ -86,7 +86,7 @@ Absolutely! Alchemix allows you the flexibility to exit or repay your loan at an
 
 TODO
 
-Learn more about the redemption rate →
+[Learn more about the redemption rate →](./concepts/redemption-rate.md)
 
 </details>
 
@@ -118,7 +118,7 @@ Most of the time, the cost and reward cancel out, so the net effect is similar t
 - The term is very short and you prefer a sure 1:1 rate on your loan compared to selling on a DEX, or;
 - Liquidity is thin, and the market discount is unusually deep.
 
-Learn more about the transmuter and market discounts →
+[Learn more about the transmuter and market discounts →](./concepts/transmuter.md)
 
 </details>
 
@@ -128,7 +128,7 @@ Learn more about the transmuter and market discounts →
 
 Yes, but an early exit applies a penalty that reduces your return. The pop-up shows the exact amount before you confirm.
 
-Learn more about early exits →
+[Learn more about early exits →](./tutorials/redeem-alassets#manage-or-close-a-position)
 
 </details>
 
@@ -138,7 +138,7 @@ Learn more about early exits →
 
 TODO
 
-Learn more about fees →
+[Learn more about fees →](./concepts/fees.md)
 
 </details>
 
@@ -159,7 +159,7 @@ Loss handling is different for each participant:
 
 Never. Earmarked collateral continues to earn you yield until the moment it is redeemed. This delayed settlement creates the temporal advantage, extra yield you would not receive in most other lending platforms.
 
-Learn more about Temporal Advantage →
+[Learn more about Temporal Advantage →](./concepts/redemption-rate#temporal-advantage)
 
 </details>
 
@@ -169,7 +169,7 @@ Learn more about Temporal Advantage →
 
 TODO
 
-Learn more about security and permissions →
+[Learn more about security and permissions →](./newguides/risk-considerations.md)
 
 </details>
 
@@ -181,6 +181,6 @@ Learn more about security and permissions →
 
 Current redemption rate, queued alAssets, vault APRs, and historic term stats are displayed directly in the main dashboard and the Earn page.
 
-View live data →
+[View live data →](https://alchemix.fi/)
 
 </details>

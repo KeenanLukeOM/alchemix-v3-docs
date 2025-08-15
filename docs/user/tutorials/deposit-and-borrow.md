@@ -12,7 +12,7 @@ A single vault deposit gives you immediate, auto-compounded yield through the Me
 
 The instructions that follow are focused on the process of depositing assets and borrowing alAssets subsequently.
 
-If you only want MYT yield, visit the Passive MYT Yield tutorial →
+[If you only want MYT yield, visit the Passive MYT Yield tutorial →](./use-passive-myt.md)
 
 ## Prerequisites
 
