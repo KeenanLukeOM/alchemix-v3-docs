@@ -122,6 +122,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/social-card.png",
+      colorMode: {
+        defaultMode: "dark", // start in dark
+        disableSwitch: true, // hide the light/dark toggle
+        respectPrefersColorScheme: false, // ignore OS preference
+      },
       navbar: {
         // title: "Alchemix",
         logo: {
