@@ -4,6 +4,7 @@ module.exports = {
     {
       type: "doc",
       id: "index",
+      className: "sidebarBold",
       label: "Introduction",
     },
     {
@@ -19,6 +20,7 @@ module.exports = {
     {
       type: "category",
       label: "Key Concepts",
+      className: "sidebarBold",
       collapsed: false,
       items: [
         "concepts/myt-and-yield",
@@ -34,6 +36,7 @@ module.exports = {
     {
       type: "category",
       label: "Tutorials",
+      className: "sidebarBold",
       collapsed: false,
       items: [
         "tutorials/use-passive-myt",
@@ -45,6 +48,7 @@ module.exports = {
     {
       type: "category",
       label: "Guides",
+      className: "sidebarBold",
       collapsed: false,
       items: [
         "newguides/how-peg-is-maintained",
