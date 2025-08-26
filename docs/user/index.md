@@ -1,8 +1,9 @@
 import AlchemixStats from "@site/src/components/AlchemixStats";
+import Hero from '@site/static/img/landing-01.webp';
 
 # Getting started with Alchemix
 
-![](/img/landing-01.webp)
+<img src={Hero} alt="Alchemix v3" style={{ width: '100%', height: 'auto', display: 'block' }} />
 
 ### QUICK START:
 
