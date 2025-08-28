@@ -120,7 +120,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      announcementBar: {
+        id: "beta-2025-audit",
+        content:
+          "🚧 <strong>Public BETA:</strong> These docs are in active development. Expect gaps and changes. " +
+          '<a href="https://discord.gg/E9eGjttFCB">Ask us for clarity</a> · ' +
+          '<a href="https://github.com/KeenanLukeOM/alchemix-v3-docs/issues/new">Report an issue</a>',
+        backgroundColor: "#FFF4E5",
+        textColor: "#3D2C00",
+        isCloseable: false,
+      },
       image: "img/social-card.png",
       colorMode: {
         defaultMode: "dark", // start in dark
