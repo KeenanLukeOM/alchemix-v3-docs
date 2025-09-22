@@ -6,29 +6,7 @@ import AlchemixStats from "@site/src/components/AlchemixStats";
 
 # Dev Overview
 
-Alchemix lets you instantly access loans representing your collateral's future yield. Over time, the interest your deposit earns is used to repay your debt automatically. Alchemix loans are self-repaying, interest-free, and non-liquidating.
-
-> **Alchemix gives you DeFi loans that transform future yield into present-day capital.**
-
-Explore Alchemix's diverse collateral strategies to find the best self-repaying loan for you on our [**main website.**](https://alchemix.fi/)
-
-# The Benefits of Alchemix
-
-- **Maximize Your Assets:** Maintain exposure to your yield-bearing assets while accessing immediate value—spend your future yield today.
-
-- **Diverse Collateral Strategies:** Complete flexibility to choose between any integrated yield strategies.
-
-- **No Forced Liquidations:** Your loan can't be forcibly closed by anyone, not even the protocol. You can self-liquidate anytime by repaying your debt with your collateral.
-
-- **Complete Freedom:** Your position remains accessible at all times, with no locking or deposit/withdrawal fees. You can repay your debt whenever you choose or let it repay itself over time.
-
----
-
-# Get Your First Self-Repaying Loan
-
-- [Watch the Alchemix cinematic ad](https://www.youtube.com/embed/FlWP9FC8C3c?autoplay=1)
-
-- [Borrow using Alchemix](https://alchemix.fi/)
+This section of the docs will contain contract descriptions and architecture describing how Alchemix contracts work and interact on a technical level.
 
 # Quick Start Guide
 
