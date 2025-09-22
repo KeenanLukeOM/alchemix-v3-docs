@@ -8,7 +8,7 @@ module.exports = {
       collapsed: false,
       items: [
         "architecture/overview",
-        "architecture/design-goals",
+        "architecture/redemptions",
         "architecture/security-model",
       ],
     },
@@ -17,11 +17,7 @@ module.exports = {
       label: "Core Modules",
       collapsed: false,
       items: [
-        "transmuter/overview",
-        "transmuter/redemption-mechanics",
-        "alchemist/cdp-mechanics",
-        "alchemist/earmarking",
-        "myt/meta-yield-token",
+        "alchemist/alchemist-contract",
       ],
     },
     {
