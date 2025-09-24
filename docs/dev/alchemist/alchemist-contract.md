@@ -103,7 +103,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
   - [`_liquidate(uint256 acountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
   - [`_calculateUnrealizedDebt(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
 - **Updated By**
   - `setTransmuter(address value)`
@@ -522,12 +522,12 @@ TODO - I don't see this used anywhere??
 - **Used By**
   - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
   - [`_calculateUnrealizedDebt(int256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
 - **Updated By**
   - [repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
 - **Read By** - `cumulativeEarmarked()`
 </details>
 <details>
@@ -536,10 +536,10 @@ TODO - I don't see this used anywhere??
 - **Description** - the block number when \_earmark() last updated global earmarking. Used to compute how much to earmark from the last time earmarking occured.
 - **Type** - uint256
 - **Used By**
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
   - [`_calculateUnrealizedDebt(int256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
 - **Updated By**
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
 - **Read By** - `lastEarmarkBlock()`
 </details>
 <details>
@@ -573,7 +573,7 @@ TODO - I don't see this used anywhere??
 - **Used By**
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
   - [`_doLiquidation(uint256 accountId, uint256 collateralInUnderlying, uint256 repaidAmountInYield)`](/dev/alchemist/alchemist-contract#InternalOperations_doLiquidation)
-  - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+  - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
   - [`_calculateUnrealizedDebt(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
 - **Updated By**
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
@@ -656,7 +656,7 @@ TODO - I don't see this used anywhere??
   - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
   - [`_sync(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_sync)
   - [`_calculateUnrealizedDebt(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
-- **Updated By** - [`_earmark()`](/dev/alchemist-contract#InternalOperations_earmark)
+- **Updated By** - [`_earmark()`](/dev/alchemist/alchemist-contract#InternalOperations_earmark)
 </details>
 <details>
   <summary>_redemptionWeight</summary>
