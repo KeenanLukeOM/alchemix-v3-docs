@@ -2,16 +2,16 @@
 module.exports = {
   tutorialSidebar: [
     { type: "doc", id: "index", label: "Dev Overview" },
-    {
-      type: "category",
-      label: "Architecture",
-      collapsed: false,
-      items: [
-        "architecture/overview",
-        "architecture/redemptions",
-        "architecture/security-model",
-      ],
-    },
+    // {
+    //   type: "category",
+    //   label: "Architecture",
+    //   collapsed: false,
+    //   items: [
+    //     "architecture/overview",
+    //     "architecture/redemptions",
+    //     "architecture/security-model",
+    //   ],
+    // },
     {
       type: "category",
       label: "Core Modules",
@@ -19,27 +19,27 @@ module.exports = {
       items: [
         "alchemist/alchemist-contract",
         "transmuter/transmuter-contract",
-        "myt/myt-contract"
+        "myt/myt-contract",
       ],
     },
-    {
-      type: "category",
-      label: "Smart Contracts",
-      collapsed: false,
-      items: ["contracts/ethereum", "contracts/optimism", "contracts/arbitrum"],
-    },
-    {
-      type: "category",
-      label: "Integrating Alchemix",
-      collapsed: false,
-      items: [
-        "integration/using-alassets",
-        "integration/integrate-myt",
-        "integration/integrate-transmuter",
-        "integration/integrate-alchemist",
-        "integration/grants-program",
-      ],
-    },
-    "faq",
+    // {
+    //   type: "category",
+    //   label: "Smart Contracts",
+    //   collapsed: false,
+    //   items: ["contracts/ethereum", "contracts/optimism", "contracts/arbitrum"],
+    // },
+    // {
+    //   type: "category",
+    //   label: "Integrating Alchemix",
+    //   collapsed: false,
+    //   items: [
+    //     "integration/using-alassets",
+    //     "integration/integrate-myt",
+    //     "integration/integrate-transmuter",
+    //     "integration/integrate-alchemist",
+    //     "integration/grants-program",
+    //   ],
+    // },
+    // "faq",
   ],
 };
