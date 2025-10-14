@@ -18,6 +18,8 @@ module.exports = {
       collapsed: false,
       items: [
         "alchemist/alchemist-contract",
+        "transmuter/transmuter-contract",
+        "myt/myt-contract"
       ],
     },
     {

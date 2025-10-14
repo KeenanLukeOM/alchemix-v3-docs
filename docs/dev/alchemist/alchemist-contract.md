@@ -150,18 +150,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 </details>
 
 <details>
-  <summary>blocksPerYear</summary>
-
-  - **Description** - chain specific number of blocks within 1 year
-  -	**Type** - uint256
-  - **Used By**
-    - TODO - is this not used?
-  - **Updated By**
-    - NONE - immutable variable
-  - **Read By**
-    - `blocksPerYear()`
-</details>
-<details>
   <summary>minimumCollateralization</summary>
 
   - **Description** - the minimum collateralization ratio for a specific account, or how much collateral over debt is allowed before liquidation. Inverse of LTV. Value > 1.
@@ -183,7 +171,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>globalMinimumCollateralization</summary>
 
-  - **Description** - represents the minimum allowed global collateralization ratio for the Alchemist. A threshold that if crossed will result in fully liquidating accounts to cover
+  - **Description** - represents the minimum allowed global collateralization ratio for the Alchemist. A threshold that if crossed will result in fully liquidating accounts to cover. Only accounts that are already eligible for standard (partial) liquidation can be fully liquidated as a result of the globalMinimumCollateralization.
   -	**Type** - uint256
   - **Used By**
     - [`_doLiquidation(uint256 accountId, uint256 collateralInUnderlying, uint256 repaidAmountInYield)`](/dev/alchemist/alchemist-contract#InternalOperations_doLiquidation)
@@ -197,7 +185,8 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>collateralizationLowerBound</summary>
 
-  - **Description** - The minimum collateralization for liquidation eligibility. between 1 and minimumCollateralization inclusive.
+  - **Description** - The minimum collateralization for liquidation eligibility. between 1 and minimumCollateralization inclusive.<br/><br/> 
+    If `collateral / debt` falls below this value, the account becomes eligible for liquidation. In LTV terms: `liquidation LTV = 1 / collateralizationLowerBound`.
   -	**Type** - uint256
   - **Used By**
     - [`_liquidate(uint256 acountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
@@ -211,7 +200,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>protocolFee</summary>
 
-  - **Description** - the fee on user paid to the protocol. The fee is taken from collateral during redepmtions, or from collateral when users pay down their non-earmarked debt
+  - **Description** - the fee percentage (expressed in BPS) on users paid to the protocol. The fee is taken from collateral during redepmtions, or from collateral when users pay down their non-earmarked debt
   -	**Type** - uint256
   - **Used By**
     - [`burn(uint256 acountId, uint256 recipientId)`](/dev/alchemist/alchemist-contract#UserActions_burn)
@@ -227,7 +216,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>liquidatorFee</summary>
 
-  - **Description** - fee paid to liquidators on liquidation. This is denominated in debt token, which is then converted to yieldToken and taken from yieldToken. Also can be taken from underlying if feeBonus > 0.
+  - **Description** - fee percentage (expressed in BPS) paid to liquidators on liquidation. The fee amount (what this percentage is applied to) is denominated in debt token, which is then converted to yieldToken and taken from yieldToken. Also can be taken from underlying if feeBonus > 0.
   -	**Type** - uint256
   - **Used By**
     - [`_liquidate(uint256 accountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
@@ -241,7 +230,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>repaymentFee</summary>
 
-  - **Description** - fee paid to liquidators on repayment. This is denominated in yieldToken.
+  - **Description** - fee percentage (expressed in BPS) paid to liquidators on repayment. The fee amount (which this percentage is applied to) is denominated in yieldToken.
   -	**Type** - uint256
   - **Used By**
     - [`_liquidate(uint256 accountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
@@ -308,7 +297,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 
 ### Account
 
-> A struct for vriables related to per-user accounts and balances.
+> A struct for variables related to per-user accounts and balances.
 
 <details>
   <summary>collateralBalance</summary>
@@ -348,7 +337,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>earmarked</summary>
 
-  - **Description** - denominated in alAsset. Earmarked funds refer to debt that is reserved to later be redeemed for collateral.
+  - **Description** - denominated in alAsset. Earmarked funds refer to debt that is reserved to later be redeemed for collateral. Earmarked debt can only be repaid using yieldToken.
   -	**Type** - uint256
   - **Used By**
     - [`burn(uint256 amount, uint256 recipientId)`](/dev/alchemist/alchemist-contract#UserActions_burn)
@@ -474,16 +463,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 
 > Struct for variables related to redemption events.
 
-<details>
-  <summary>earmarked</summary>
-
-  TODO - I don't see this used anywhere??
-</details>
-<details>
-  <summary>earmarked</summary>
-
-  TODO - I don't see this used anywhere??
-</details>
 <details>
   <summary>earmarkWeight</summary>
 
@@ -686,7 +665,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>guardians</summary>
 
-  - **Description** - The total system-wide debt tokens issued and circulating.
+  - **Description** - A mapping of addresses to true or false values, where true indicates that the address is enabled as having the guardian role (able to execute functions guarded by the `OnlyAdminOrGuardian` modifier), and false marks the address as not having the guardian role.
   -	**Type** - mapping(address => bool)
   - **Used By**
     - [`Guardian Actions`](/dev/alchemist/alchemist-contract#guardian-actions)
@@ -937,7 +916,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 
   - **Description** - Attempts to `_liquidate()` an undercollateralized position of the account identified by the passed accountId.<br/><br/>
     First syncs state and applys earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
-    - @param accountId - the tokenId of the account to liquidate
+    - `@param accountId` - the tokenId of the account to liquidate
   - **Visibility Specifier** - external
   - **State Mutability Specifier** - nonpayable
   - **Returns**
@@ -963,7 +942,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `totalAmountLiquidated` — sum of per-account `yieldAmount` returned by `_liquidate` (i.e., total yield moved)
     - `totalFeesInYield` — sum of yield-denominated liquidator/repayment fees
     - `totalFeesInUnderlying` — sum of underlying-denominated liquidator fees paid from this Alchemist's `alchemistFeeVault` (see `_liquidate()` for when this would occur)
-  - **Emits** - none - TODO should this emit BatchLiquidated()
+  - **Emits** - none
   - **Reverts**
     - [`MissingInputData()`](/dev/alchemist/alchemist-contract#Error_MissingInputData) — `accountIds` is empty
     - [`LiquidationError()`](/dev/alchemist/alchemist-contract#Error_LiquidationError) — no liquidation/repayment occurred for any account. See `liquidate()` under **User Actions** for why this might occur.
@@ -1032,6 +1011,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>pauseDeposits(bool isPaused)</summary>
 
   - **Description** - Sets the depositsPaused variable, preventing users from calling the deposit function.
+    - `@param isPaused` - true/false value indicating whether or deposits should be accepted.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1043,6 +1023,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>pauseLoans(bool isPaused)</summary>
 
   - **Description** - Sets the pauseLoans variable, preventing users from calling the mint and mintFrom functions.
+    - `@param isPaused` - true/false value indicating whether or not to pause the ability to take loans
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1059,6 +1040,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setAlchemistPositionNFT(address NFT)</summary>
 
   - **Description** - Sets the NFT contract that will be used to represent NFT positions. Can only be set once.
+    - `@param NFT` - the addressof the alchemistPositionNft contract.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1071,6 +1053,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setAlchemistFeeVault(address value)</summary>
 
   - **Description** - Sets the fee vault used for liquidations in the event of (1) an account not being able to cover, (2) the Alchemist itself being globally undercollateralized.
+    - `@param value` - the address of the AlchemistFeeVault contract to use.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1083,6 +1066,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setPendingAdmin(address value)</summary>
 
   - **Description** - Sets the pending admin. First part of a two-step process to change the admin. The second step is the pendingAdmin accepting the role by calling acceptAdmin.
+    - `@param value` - the address of the EOA to set as the new pending admin
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1094,6 +1078,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setDepositCap(uint256 value)</summary>
 
   - **Description** - Sets the maximum number of yieldTokens that can be held by this contract. Must exceed the current balance of yield tokens.
+    - `@param quantity of yield tokens to set as the new cap`
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1105,6 +1090,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setProtocolFeeReceiver(address value)</summary>
 
   - **Description** - Sets the address which receives protocol fees.
+    - `@param value` - the address to recieve fees.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1116,6 +1102,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setProtocolFee(uint256 fee)</summary>
 
   - **Description** - Sets the fee percentage paid to the protocol denominated in BPS.
+    - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1127,6 +1114,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setLiquidatorFee(uint256 fee)</summary>
 
   - **Description** - Sets the fee percentage paid to liquidators for liquidating an account denominated in BPS.
+    - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1138,6 +1126,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setRepaymentFee(uint256 fee)</summary>
 
   - **Description** - Sets the fee percentage paid to liquidators for repaying an account denominated in BPS.
+    - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1149,6 +1138,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setTokenAdapter(address value)</summary>
 
   - **Description** - Sets the tokenAdapter which is used to price yieldTokens.
+    - `@param value` - the address of the contract to price yieldTokens.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1160,6 +1150,8 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setGuardian(address guardian, bool isActive)</summary>
 
   - **Description** - Sets an address as an active guardian in the guardians mapping.
+    - `@param guardian` - the address to activate or de-actviate as a guardian
+    - `@param isActive` - a true/false value indicating if the address should be an active guardian or not.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1171,6 +1163,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setMinimumCollateralization(uint256 value)</summary>
 
   - **Description** - Sets the minimumCollateralization variable.
+    - `@param value` - the value to use for the new minimumCollateralization variable. Must be >= 1e18. (1)
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1182,6 +1175,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setGlobalMinimumCollateralization(uint256 value)</summary>
 
   - **Description** - Sets the globalMinimumCollateralization variable.
+    - `@param value` - the uint256 to set as globalMinCollateralization. Must be above minimumCollateralization
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1193,6 +1187,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>setCollateralizationLowerBound(uint256 value)</summary>
 
   - **Description** - Sets the collateralizationLowerBound variable.
+    - `@param value` - the uint256 to use as the new value.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - nonpayable
   -	**Returns** - none
@@ -1271,7 +1266,8 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details id="InternalOperations_calculateUnrealizedDebt">
   <summary>_calculateUnrealizedDebt(uint256 tokenId)</summary>
 
-  - **Description** - Gets a snapshot of what account debt values will be after a sync occurs. The tokenId passed is the id of the account owner used to access their account.
+  - **Description** - Gets a snapshot of what account debt values will be after a sync occurs
+    - `@param tokenId` - the id of the account owner used to access their account.
   -	**Visibility Specifier** - internal
   -	**State Mutability Specifier** - view
   -	**Returns** - a tuple (uint256, uint256, uint256) containing the following:
@@ -1286,7 +1282,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 
   - **Description** - Internal helper that performs the liquidation logic for an undercollateralized account.<br/><br/>
     First syncs state and applies earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
-    - @param accountId - the tokenId of the account to liquidate
+    - `@param accountId` - the tokenId of the account to liquidate
   - **Visibility Specifier** - internal
   - **State Mutability Specifier** - nonpayable
   - **Returns**
@@ -1350,7 +1346,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     Earmarks and syncs to update global/account state, then reduces account debt through repayment. First consumes earmarked debt, then deducts the repayment from collateral. (yieldToken)<br/>
     Charges a protocol fee if collateral remains to pay it, and only after funding the repayment. Transfers the repaid yield to the Transmuter.<br/><br/>
     Difference between _forceRepay and _liquidate:<br/>
-    Both use collateral to cover the cost, however for differetn purposes. ForceRepay is using collateral to reconcile earmarked debt. This may or may not bring collateralization ratio to the correct threshold. Liquidation occurs afterwords and uses collateral to reconcile LTV such that it meets the required threshold. ForceRepay occurs before Liquidations do.
+    Both use collateral to cover the cost, however for different purposes. ForceRepay is using collateral to reconcile earmarked debt. This may or may not bring collateralization ratio to the correct threshold. Liquidation occurs afterwords and uses collateral to reconcile LTV such that it meets the required threshold. ForceRepay occurs before Liquidations do.
     - `@param accountId` - the id of the position to repay debt for
     - `@param amount` - desired repayment in debt tokens
   - **Visibility Specifier** - internal
@@ -1505,6 +1501,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>getCDP(uint256 tokenId)</summary>
 
   - **Description** - Gets an Account's simulated up-to-date collateral, debt, and earmarked amounts. (as if it were synced to be current with global state)
+    - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - view
   -	**Returns** - a tuple (uint256, uint256, uint256) containing the following:
@@ -1528,6 +1525,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>getMaxBorrowable(uint256 tokenId)</summary>
 
   - **Description** - Gets an Account's max amount of debtTokens that they can borrow (mint) given their outstanding LTV and deposited collateral.
+    - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - view
   -	**Returns** - uint256 maxBorrowable
@@ -1538,6 +1536,8 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>mintAllowance(uint256 ownerTokenId, address spender)</summary>
 
   - **Description** - Gets the max amount of debt an approved spender is allowed to mint on behalf of an owner's account.
+    - `@param ownerTokenId` - the id used to identify the account of the owner.
+    - `@param spender` - the address of the person being granted allowance to mint on behalf of the owner.
   -	**Visibility Specifier** - external
   -	**State Mutability Specifier** - view
   -	**Returns** - uint256 mintAllowance
@@ -1558,6 +1558,7 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
   <summary>totalValue(uint256 tokenId)</summary>
 
   - **Description** - Calculates the total value of a specific accounts up-to-date collateral value by first converting to underlying, and then denominating in debt tokens. Used internally during liquidations.
+    - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - public
   -	**State Mutability Specifier** - view
   -	**Returns** - uint256 totalTokenTVLInUnderlying
