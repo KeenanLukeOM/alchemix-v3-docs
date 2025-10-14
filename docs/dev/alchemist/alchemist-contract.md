@@ -143,20 +143,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 </details>
 
 <details>
-<<<<<<< HEAD
-=======
-  <summary>blocksPerYear</summary>
-
-- **Description** - chain specific number of blocks within 1 year
-- **Type** - uint256
-- **Used By**
-  - TODO - is this not used?
-- **Updated By**
-  - NONE - immutable variable
-- **Read By** - `blocksPerYear()`
-</details>
-<details>
->>>>>>> main
   <summary>minimumCollateralization</summary>
 
 - **Description** - the minimum collateralization ratio for a specific account, or how much collateral over debt is allowed before liquidation. Inverse of LTV. Value > 1.
@@ -177,7 +163,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>globalMinimumCollateralization</summary>
 
-<<<<<<< HEAD
   - **Description** - represents the minimum allowed global collateralization ratio for the Alchemist. A threshold that if crossed will result in fully liquidating accounts to cover. Only accounts that are already eligible for standard (partial) liquidation can be fully liquidated as a result of the globalMinimumCollateralization.
   -	**Type** - uint256
   - **Used By**
@@ -188,22 +173,10 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `globalMinimumCollateralization()`
   - **Notified By**
     - [`GlobalMinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_GlobalMinimumCollateralizationUpdated)
-=======
-- **Description** - represents the minimum allowed global collateralization ratio for the Alchemist. A threshold that if crossed will result in fully liquidating accounts to cover
-- **Type** - uint256
-- **Used By**
-  - [`_doLiquidation(uint256 accountId, uint256 collateralInUnderlying, uint256 repaidAmountInYield)`](/dev/alchemist/alchemist-contract#InternalOperations_doLiquidation)
-- **Updated By**
-  - [`setGlobalMinimumCollateralization(uint256 value)`](/dev/alchemist/alchemist-contract#AdminActions_setGlobalMinimumCollateralization)
-- **Read By**
-  - `globalMinimumCollateralization()`
-- **Notified By** - [`GlobalMinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_GlobalMinimumCollateralizationUpdated)
->>>>>>> main
 </details>
 <details>
   <summary>collateralizationLowerBound</summary>
 
-<<<<<<< HEAD
   - **Description** - The minimum collateralization for liquidation eligibility. between 1 and minimumCollateralization inclusive.<br/><br/> 
     If `collateral / debt` falls below this value, the account becomes eligible for liquidation. In LTV terms: `liquidation LTV = 1 / collateralizationLowerBound`.
   -	**Type** - uint256
@@ -215,22 +188,10 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `collateralizationLowerBound()`
   - **Notified By**
     - [`CollateralizationLowerBoundUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_CollateralizationLowerBoundUpdated)
-=======
-- **Description** - The minimum collateralization for liquidation eligibility. between 1 and minimumCollateralization inclusive.
-- **Type** - uint256
-- **Used By**
-  - [`_liquidate(uint256 acountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
-- **Updated By**
-  - [`setCollateralizationLowerBound(uint256 value)`](/dev/alchemist/alchemist-contract#AdminActions_setCollateralizationLowerBound)
-- **Read By**
-  - `collateralizationLowerBound()`
-- **Notified By** - [`CollateralizationLowerBoundUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_CollateralizationLowerBoundUpdated)
->>>>>>> main
 </details>
 <details>
   <summary>protocolFee</summary>
 
-<<<<<<< HEAD
   - **Description** - the fee percentage (expressed in BPS) on users paid to the protocol. The fee is taken from collateral during redepmtions, or from collateral when users pay down their non-earmarked debt
   -	**Type** - uint256
   - **Used By**
@@ -243,24 +204,10 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `protocolFee()`
   - **Notified By**
     - [`ProtocolFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeUpdated)
-=======
-- **Description** - the fee on user paid to the protocol. The fee is taken from collateral during redepmtions, or from collateral when users pay down their non-earmarked debt
-- **Type** - uint256
-- **Used By**
-  - [`burn(uint256 acountId, uint256 recipientId)`](/dev/alchemist/alchemist-contract#UserActions_burn)
-  - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
-  - [`redeem(uint256 amount)`](/dev/alchemist/alchemist-contract#TransmuterActions_redeem)
-- **Updated By**
-  - [`setProtocolFee(uint256 fee)`](/dev/alchemist/alchemist-contract#AdminActions_setProtocolFee)
-- **Read By**
-  - `protocolFee()`
-- **Notified By** - [`ProtocolFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeUpdated)
->>>>>>> main
 </details>
 <details>
   <summary>liquidatorFee</summary>
 
-<<<<<<< HEAD
   - **Description** - fee percentage (expressed in BPS) paid to liquidators on liquidation. The fee amount (what this percentage is applied to) is denominated in debt token, which is then converted to yieldToken and taken from yieldToken. Also can be taken from underlying if feeBonus > 0.
   -	**Type** - uint256
   - **Used By**
@@ -271,22 +218,10 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `liquidatorFee()`
   - **Notified By**
     - [`LiquidatorFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_LiquidatorFeeUpdated)
-=======
-- **Description** - fee paid to liquidators on liquidation. This is denominated in debt token, which is then converted to yieldToken and taken from yieldToken. Also can be taken from underlying if feeBonus > 0.
-- **Type** - uint256
-- **Used By**
-  - [`_liquidate(uint256 accountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
-- **Updated By**
-  - [`setLiquidatorFee(uint256 fee)`](/dev/alchemist/alchemist-contract#AdminActions_setLiquidatorFee)
-- **Read By**
-  - `liquidatorFee()`
-- **Notified By** - [`LiquidatorFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_LiquidatorFeeUpdated)
->>>>>>> main
 </details>
 <details>
   <summary>repaymentFee</summary>
 
-<<<<<<< HEAD
   - **Description** - fee percentage (expressed in BPS) paid to liquidators on repayment. The fee amount (which this percentage is applied to) is denominated in yieldToken.
   -	**Type** - uint256
   - **Used By**
@@ -297,17 +232,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - `repaymentFee()`
   - **Notified By**
     - [`RepaymentFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_RepaymentFeeUpdated)
-=======
-- **Description** - fee paid to liquidators on repayment. This is denominated in yieldToken.
-- **Type** - uint256
-- **Used By**
-  - [`_liquidate(uint256 accountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
-- **Updated By**
-  - [`setRepaymentFee(uint256 fee)`](/dev/alchemist/alchemist-contract#AdminActions_setRepaymentFee)
-- **Read By**
-  - `repaymentFee()`
-- **Notified By** - [`RepaymentFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_RepaymentFeeUpdated)
->>>>>>> main
 </details>
 
 ### Constants
@@ -392,7 +316,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 <details>
   <summary>earmarked</summary>
 
-<<<<<<< HEAD
   - **Description** - denominated in alAsset. Earmarked funds refer to debt that is reserved to later be redeemed for collateral. Earmarked debt can only be repaid using yieldToken.
   -	**Type** - uint256
   - **Used By**
@@ -407,18 +330,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
     - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
     - [`_forceRepay(uint256 accountId, uint256 amount)`](/dev/alchemist/alchemist-contract#InternalOperations_forceRepay)
     - [`_sync(uint256 tokenId)](/dev/alchemist/alchemist-contract#InternalOperations_sync)
-=======
-- **Description** - denominated in alAsset. Earmarked funds refer to debt that is reserved to later be redeemed for collateral.
-- **Type** - uint256
-- **Used By**
-  - [`burn(uint256 amount, uint256 recipientId)`](/dev/alchemist/alchemist-contract#UserActions_burn)
-  - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay)
-  - [`_forceRepay(uint256 accountId, uint256 amount)`](/dev/alchemist/alchemist-contract#InternalOperations_forceRepay)
-  - [`_liquidate(uint256 accountId)`](/dev/alchemist/alchemist-contract#InternalOperations_liquidate)
-  - [`_sync(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_sync)
-  - [`_calculateUnrealizedDebt(uint256 tokenId)`](/dev/alchemist/alchemist-contract#InternalOperations_calculateUnrealizedDebt)
-- **Updated By** - [`_addDebt(uint256 tokenId, uint256 amount)`](/dev/alchemist/alchemist-contract#InternalOperations_addDebt) - [`repay(uint256 amount, uint256 recipientTokenId)`](/dev/alchemist/alchemist-contract#UserActions_repay) - [`_forceRepay(uint256 accountId, uint256 amount)`](/dev/alchemist/alchemist-contract#InternalOperations_forceRepay) - [`\_sync(uint256 tokenId)](/dev/alchemist/alchemist-contract#InternalOperations_sync)
->>>>>>> main
 </details>
 <details>
   <summary>freeCollateral</summary>
@@ -518,21 +429,6 @@ The Alchemist is the vault contract responsible for accepting deposits and issui
 > Struct for variables related to redemption events.
 
 <details>
-<<<<<<< HEAD
-=======
-  <summary>earmarked</summary>
-
-TODO - I don't see this used anywhere??
-
-</details>
-<details>
-  <summary>earmarked</summary>
-
-TODO - I don't see this used anywhere??
-
-</details>
-<details>
->>>>>>> main
   <summary>earmarkWeight</summary>
 
 - **Description** - the snapshot of the global earmark index at the last redemption block. It’s used to rewind an account’s earmarked debt back to what it was when that redemption occurred, so the system can correctly apply the redemption against the right state.
@@ -721,7 +617,6 @@ TODO - I don't see this used anywhere??
 <details>
   <summary>guardians</summary>
 
-<<<<<<< HEAD
   - **Description** - A mapping of addresses to true or false values, where true indicates that the address is enabled as having the guardian role (able to execute functions guarded by the `OnlyAdminOrGuardian` modifier), and false marks the address as not having the guardian role.
   -	**Type** - mapping(address => bool)
   - **Used By**
@@ -732,17 +627,6 @@ TODO - I don't see this used anywhere??
     - `guardians(address guardian)`
   - **Notified By**
     - [`GuardianSet(address guardian, bool state)`](/dev/alchemist/alchemist-contract#Events_GuardianSet)
-=======
-- **Description** - The total system-wide debt tokens issued and circulating.
-- **Type** - mapping(address => bool)
-- **Used By**
-  - [`Guardian Actions`](/dev/alchemist/alchemist-contract#guardian-actions)
-- **Updated By**
-  - [`setGuardian(address guardian, bool isActive)`](/dev/alchemist/alchemist-contract#AdminActions_setGuardian)
-- **Read By**
-  - `guardians(address guardian)`
-- **Notified By** - [`GuardianSet(address guardian, bool state)`](/dev/alchemist/alchemist-contract#Events_GuardianSet)
->>>>>>> main
 </details>
 
 ### Private State
@@ -941,7 +825,6 @@ TODO - I don't see this used anywhere??
 <details id="UserActions_liquidate">
   <summary>liquidate(uint256 accountId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Attempts to `_liquidate()` an undercollateralized position of the account identified by the passed accountId.<br/><br/>
     First syncs state and applys earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
     - `@param accountId` - the tokenId of the account to liquidate
@@ -956,26 +839,11 @@ TODO - I don't see this used anywhere??
   - **Reverts**
     - [UnknownAccountOwnerIDError()](/dev/alchemist/alchemist-contract#Error_UnknownAccountOwnerIDError) — passed accountId does not correspond to an existing NFT
     - [LiquidationError()](/dev/alchemist/alchemist-contract#Error_LiquidationError) — no liquidation/repayment occurred, either because the account is healthy, the tokenAdapter has trouble pricing the yieldToken (price == 0), etc.
-=======
-- **Description** - Attempts to `_liquidate()` an undercollateralized position of the account identified by the passed accountId.<br/><br/>
-  First syncs state and applys earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
-  - @param accountId - the tokenId of the account to liquidate
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns**
-  - `yieldAmount` — if liquidation happened: collateral in yield seized; if only repayment happened: the repaid amount in yield
-  - `feeInYield` — liquidator/repayment fee paid in yield tokens
-  - `feeInUnderlying` — additional liquidator fee paid in underlying from this Alchemist's `alchemistFeeVault` (if needed)
-- **Emits**
-  - [`Liquidated(uint256 indexed accountId, address liquidator, uint256 amount, uint256 feeInYield, uint256 feeInUnderlying)`](/dev/alchemist/alchemist-contract#Events_Liquidated)
-- **Reverts** - [UnknownAccountOwnerIDError()](/dev/alchemist/alchemist-contract#Error_UnknownAccountOwnerIDError) — passed accountId does not correspond to an existing NFT - [LiquidationError()](/dev/alchemist/alchemist-contract#Error_LiquidationError) — no liquidation/repayment occurred, either because the account is healthy, the tokenAdapter has trouble pricing the yieldToken (price == 0), etc.
->>>>>>> main
 </details>
 
 <details id="UserActions_batchLiquidate">
   <summary>batchLiquidate(uint256[] accountIds)</summary>
 
-<<<<<<< HEAD
   - **Description** - Attempts liquidation across multiple accounts.<br/><br/>
     Calls the internal `_liquidate` for each valid account, aggregates the total amount of yieldToken seized from collateral (earmarked repayment + liquidation seizure) along with the liquidator fees, and returns the totals.
     - `@param accountIds` - array of tokenIds to attempt liquidation on. Invalid IDs are skipped.
@@ -989,19 +857,6 @@ TODO - I don't see this used anywhere??
   - **Reverts**
     - [`MissingInputData()`](/dev/alchemist/alchemist-contract#Error_MissingInputData) — `accountIds` is empty
     - [`LiquidationError()`](/dev/alchemist/alchemist-contract#Error_LiquidationError) — no liquidation/repayment occurred for any account. See `liquidate()` under **User Actions** for why this might occur.
-=======
-- **Description** - Attempts liquidation across multiple accounts.<br/><br/>
-  Calls the internal `_liquidate` for each valid account, aggregates the total amount of yieldToken seized from collateral (earmarked repayment + liquidation seizure) along with the liquidator fees, and returns the totals.
-  - `@param accountIds` - array of tokenIds to attempt liquidation on. Invalid IDs are skipped.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns**
-  - `totalAmountLiquidated` — sum of per-account `yieldAmount` returned by `_liquidate` (i.e., total yield moved)
-  - `totalFeesInYield` — sum of yield-denominated liquidator/repayment fees
-  - `totalFeesInUnderlying` — sum of underlying-denominated liquidator fees paid from this Alchemist's `alchemistFeeVault` (see `_liquidate()` for when this would occur)
-- **Emits** - none - TODO should this emit BatchLiquidated()
-- **Reverts** - [`MissingInputData()`](/dev/alchemist/alchemist-contract#Error_MissingInputData) — `accountIds` is empty - [`LiquidationError()`](/dev/alchemist/alchemist-contract#Error_LiquidationError) — no liquidation/repayment occurred for any account. See `liquidate()` under **User Actions** for why this might occur.
->>>>>>> main
 </details>
 <details id="UserActions_poke">
   <summary>poke(uint256 tokenId)</summary>
@@ -1062,7 +917,6 @@ TODO - I don't see this used anywhere??
 <details id="GuardianActions_pauseDeposits">
   <summary>pauseDeposits(bool isPaused)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the depositsPaused variable, preventing users from calling the deposit function.
     - `@param isPaused` - true/false value indicating whether or deposits should be accepted.
   -	**Visibility Specifier** - external
@@ -1071,20 +925,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`DepositsPaused(bool isPaused)`](/dev/alchemist/alchemist-contract#Events_DepositsPaused)
   - **Reverts** - none
-=======
-- **Description** - Sets the depositsPaused variable, preventing users from calling the deposit function.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`DepositsPaused(bool isPaused)`](/dev/alchemist/alchemist-contract#Events_DepositsPaused)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="GuardianActions_pauseLoans">
   <summary>pauseLoans(bool isPaused)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the pauseLoans variable, preventing users from calling the mint and mintFrom functions.
     - `@param isPaused` - true/false value indicating whether or not to pause the ability to take loans
   -	**Visibility Specifier** - external
@@ -1093,15 +937,6 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`LoansPaused(bool isPaused)`](/dev/alchemist/alchemist-contract#Events_LoansPaused)
   - **Reverts** - none
-=======
-- **Description** - Sets the pauseLoans variable, preventing users from calling the mint and mintFrom functions.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`LoansPaused(bool isPaused)`](/dev/alchemist/alchemist-contract#Events_LoansPaused)
-- **Reverts** - none
->>>>>>> main
 </details>
 
 ### Admin Actions
@@ -1111,7 +946,6 @@ TODO - I don't see this used anywhere??
 <details id="AdminActions_setAlchemistPositionNFT">
   <summary>setAlchemistPositionNFT(address NFT)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the NFT contract that will be used to represent NFT positions. Can only be set once.
     - `@param NFT` - the addressof the alchemistPositionNft contract.
   -	**Visibility Specifier** - external
@@ -1121,19 +955,10 @@ TODO - I don't see this used anywhere??
   - **Reverts**
     - [`AlchemistV3NFTZeroAddressError`](/dev/alchemist/alchemist-contract#Errors_AlchemistV3NFTZeroAddressError) - if the NFT is set to the zero address
     - [`AlchemistV3NFTAlreadySetError`](/dev/alchemist/alchemist-contract#AlchemistV3NFTAlreadySetError) - if the NFT is set to the zero address
-=======
-- **Description** - Sets the NFT contract that will be used to represent NFT positions. Can only be set once.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits** - none
-- **Reverts** - [`AlchemistV3NFTZeroAddressError`](/dev/alchemist/alchemist-contract#Errors_AlchemistV3NFTZeroAddressError) - if the NFT is set to the zero address - [`AlchemistV3NFTAlreadySetError`](/dev/alchemist/alchemist-contract#AlchemistV3NFTAlreadySetError) - if the NFT is set to the zero address
->>>>>>> main
 </details>
 <details id="AdminActions_setAlchemistFeeVault">
   <summary>setAlchemistFeeVault(address value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the fee vault used for liquidations in the event of (1) an account not being able to cover, (2) the Alchemist itself being globally undercollateralized.
     - `@param value` - the address of the AlchemistFeeVault contract to use.
   -	**Visibility Specifier** - external
@@ -1143,20 +968,10 @@ TODO - I don't see this used anywhere??
     - [`AlchemistFeeVaultUpdated`](/dev/alchemist/alchemist-contract#Events_AlchemistFeeVaultUpdated)
   - **Reverts**
     - [`AlchemistVaultTokenMismatchError`](/dev/alchemist/alchemist-contract#Errors_AlchemistVaultTokenMismatchError) - if the token of the fee vault doesn't match the underlying
-=======
-- **Description** - Sets the fee vault used for liquidations in the event of (1) an account not being able to cover, (2) the Alchemist itself being globally undercollateralized.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`AlchemistFeeVaultUpdated`](/dev/alchemist/alchemist-contract#Events_AlchemistFeeVaultUpdated)
-- **Reverts** - [`AlchemistVaultTokenMismatchError`](/dev/alchemist/alchemist-contract#Errors_AlchemistVaultTokenMismatchError) - if the token of the fee vault doesn't match the underlying
->>>>>>> main
 </details>
 <details id="AdminActions_setPendingAdmin">
   <summary>setPendingAdmin(address value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the pending admin. First part of a two-step process to change the admin. The second step is the pendingAdmin accepting the role by calling acceptAdmin.
     - `@param value` - the address of the EOA to set as the new pending admin
   -	**Visibility Specifier** - external
@@ -1165,20 +980,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`PendingAdminUpdated(address value)`](/dev/alchemist/alchemist-contract#Events_PendingAdminUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the pending admin. First part of a two-step process to change the admin. The second step is the pendingAdmin accepting the role by calling acceptAdmin.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`PendingAdminUpdated(address value)`](/dev/alchemist/alchemist-contract#Events_PendingAdminUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setDepositCap">
   <summary>setDepositCap(uint256 value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the maximum number of yieldTokens that can be held by this contract. Must exceed the current balance of yield tokens.
     - `@param quantity of yield tokens to set as the new cap`
   -	**Visibility Specifier** - external
@@ -1187,20 +992,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`DepositCapUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_)
   - **Reverts** - none
-=======
-- **Description** - Sets the maximum number of yieldTokens that can be held by this contract. Must exceed the current balance of yield tokens.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`DepositCapUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setProtocolFeeReceiver">
   <summary>setProtocolFeeReceiver(address value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the address which receives protocol fees.
     - `@param value` - the address to recieve fees.
   -	**Visibility Specifier** - external
@@ -1209,20 +1004,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`ProtocolFeeReceiverUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeReceiverUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the address which receives protocol fees.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`ProtocolFeeReceiverUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeReceiverUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setProtocolFee">
   <summary>setProtocolFee(uint256 fee)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the fee percentage paid to the protocol denominated in BPS.
     - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
@@ -1231,20 +1016,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`ProtocolFeeUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the fee percentage paid to the protocol denominated in BPS.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`ProtocolFeeUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_ProtocolFeeUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setLiquidatorFee">
   <summary>setLiquidatorFee(uint256 fee)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the fee percentage paid to liquidators for liquidating an account denominated in BPS.
     - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
@@ -1253,20 +1028,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`LiquidatorFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_LiquidatorFeeUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the fee percentage paid to liquidators for liquidating an account denominated in BPS.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`LiquidatorFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_LiquidatorFeeUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setRepaymentFee">
   <summary>setRepaymentFee(uint256 fee)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the fee percentage paid to liquidators for repaying an account denominated in BPS.
     - `@param fee` - a uint number from 0 to 10_000
   -	**Visibility Specifier** - external
@@ -1275,20 +1040,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`RepaymentFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_RepaymentFeeUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the fee percentage paid to liquidators for repaying an account denominated in BPS.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`RepaymentFeeUpdated(uint256 fee)`](/dev/alchemist/alchemist-contract#Events_RepaymentFeeUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setTokenAdapter">
   <summary>setTokenAdapter(address value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the tokenAdapter which is used to price yieldTokens.
     - `@param value` - the address of the contract to price yieldTokens.
   -	**Visibility Specifier** - external
@@ -1297,20 +1052,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`TokenAdapterUpdated(address value)`](/dev/alchemist/alchemist-contract#Events_TokenAdapterUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the tokenAdapter which is used to price yieldTokens.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`TokenAdapterUpdated(address value)`](/dev/alchemist/alchemist-contract#Events_TokenAdapterUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setGuardian">
   <summary>setGuardian(address guardian, bool isActive)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets an address as an active guardian in the guardians mapping.
     - `@param guardian` - the address to activate or de-actviate as a guardian
     - `@param isActive` - a true/false value indicating if the address should be an active guardian or not.
@@ -1320,20 +1065,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`GuardianSet(address guardian, bool isActive)`](/dev/alchemist/alchemist-contract#Events_GuardianSet)
   - **Reverts** - none
-=======
-- **Description** - Sets an address as an active guardian in the guardians mapping.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`GuardianSet(address guardian, bool isActive)`](/dev/alchemist/alchemist-contract#Events_GuardianSet)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setMinimumCollateralization">
   <summary>setMinimumCollateralization(uint256 value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the minimumCollateralization variable.
     - `@param value` - the value to use for the new minimumCollateralization variable. Must be >= 1e18. (1)
   -	**Visibility Specifier** - external
@@ -1342,20 +1077,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`MinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_MinimumCollateralizationUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the minimumCollateralization variable.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`MinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_MinimumCollateralizationUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setGlobalMinimumCollateralization">
   <summary>setGlobalMinimumCollateralization(uint256 value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the globalMinimumCollateralization variable.
     - `@param value` - the uint256 to set as globalMinCollateralization. Must be above minimumCollateralization
   -	**Visibility Specifier** - external
@@ -1364,20 +1089,10 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`GlobalMinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_GlobalMinimumCollateralizationUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the globalMinimumCollateralization variable.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`GlobalMinimumCollateralizationUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_GlobalMinimumCollateralizationUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="AdminActions_setCollateralizationLowerBound">
   <summary>setCollateralizationLowerBound(uint256 value)</summary>
 
-<<<<<<< HEAD
   - **Description** - Sets the collateralizationLowerBound variable.
     - `@param value` - the uint256 to use as the new value.
   -	**Visibility Specifier** - external
@@ -1386,15 +1101,6 @@ TODO - I don't see this used anywhere??
   -	**Emits**
     - [`CollateralizationLowerBoundUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_CollateralizationLowerBoundUpdated)
   - **Reverts** - none
-=======
-- **Description** - Sets the collateralizationLowerBound variable.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - nonpayable
-- **Returns** - none
-- **Emits**
-  - [`CollateralizationLowerBoundUpdated(uint256 value)`](/dev/alchemist/alchemist-contract#Events_CollateralizationLowerBoundUpdated)
-- **Reverts** - none
->>>>>>> main
 </details>
 
 ### Transmuter Actions
@@ -1467,7 +1173,6 @@ TODO - I don't see this used anywhere??
 <details id="InternalOperations_calculateUnrealizedDebt">
   <summary>_calculateUnrealizedDebt(uint256 tokenId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Gets a snapshot of what account debt values will be after a sync occurs
     - `@param tokenId` - the id of the account owner used to access their account.
   -	**Visibility Specifier** - internal
@@ -1478,22 +1183,10 @@ TODO - I don't see this used anywhere??
     - collateral - the amount of collateral that has yet to be redeemed
   -	**Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Gets a snapshot of what account debt values will be after a sync occurs. The tokenId passed is the id of the account owner used to access their account.
-- **Visibility Specifier** - internal
-- **State Mutability Specifier** - view
-- **Returns** - a tuple (uint256, uint256, uint256) containing the following:
-  - debt - the amount of debt the account will have after an update
-  - earmarked - the amount of debt which is currently earmarked for redemption
-  - collateral - the amount of collateral that has yet to be redeemed
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="InternalOperations_liquidate">
   <summary>_liquidate(uint256 accountId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Internal helper that performs the liquidation logic for an undercollateralized account.<br/><br/>
     First syncs state and applies earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
     - `@param accountId` - the tokenId of the account to liquidate
@@ -1505,19 +1198,6 @@ TODO - I don't see this used anywhere??
     - `feeInUnderlying` - additional liquidator fee paid in underlying from this Alchemist's `alchemistFeeVault` (if needed)
   - **Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Internal helper that performs the liquidation logic for an undercollateralized account.<br/><br/>
-  First syncs state and applies earmarking so the account is up to date, then repays earmarked debt if present. If that restores the position above the collateralization lower bound, a repayment fee denominated in yield is paid to the caller and no liquidation is performed. If the position remains below the lower bound, proceeds to liquidate, seizing yieldToken-denominated collateral and paying the liquidator fees. If the account does not have enough to cover liquidation fees, or the entire Alchemist is undercollateralized, then the liquidator will be paid using the funds from this Alchemist's `alchemistFeeVault`.
-  - @param accountId - the tokenId of the account to liquidate
-- **Visibility Specifier** - internal
-- **State Mutability Specifier** - nonpayable
-- **Returns**
-  - `amountLiquidated` - if liquidation happened: collateral in yield seized; if only repayment happened: the repaid amount in yield; If the tokenAdapter prices the yieldToken at 0, returns 0
-  - `feeInYield` - liquidator/repayment fee paid in yield tokens
-  - `feeInUnderlying` - additional liquidator fee paid in underlying from this Alchemist's `alchemistFeeVault` (if needed)
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="InternalOperations_doLiquidation">
   <summary>_doLiquidation(uint256 accountId, uint256 collateralInUnderlying, uint256 repaidAmountInYield)</summary>
@@ -1568,7 +1248,6 @@ TODO - I don't see this used anywhere??
 <details id="InternalOperations_forceRepay">
   <summary>_forceRepay(uint256 accountId, uint256 amount)</summary>
 
-<<<<<<< HEAD
   - **Description** - Repays earmarked debt using the account’s collateral (denominated in yieldToken).<br/><br/>
     Earmarks and syncs to update global/account state, then reduces account debt through repayment. First consumes earmarked debt, then deducts the repayment from collateral. (yieldToken)<br/>
     Charges a protocol fee if collateral remains to pay it, and only after funding the repayment. Transfers the repaid yield to the Transmuter.<br/><br/>
@@ -1583,20 +1262,6 @@ TODO - I don't see this used anywhere??
   - **Reverts**
     - No outstanding debt in the account to repay
     - [`UnknownAccountOwnerIDError()`](/dev/alchemist/alchemist-contract#Error_UnknownAccountOwnerIDError) — invalid `accountId`
-=======
-- **Description** - Repays earmarked debt using the account’s collateral (denominated in yieldToken).<br/><br/>
-  Earmarks and syncs to update global/account state, then reduces account debt through repayment. First consumes earmarked debt, then deducts the repayment from collateral. (yieldToken)<br/>
-  Charges a protocol fee if collateral remains to pay it, and only after funding the repayment. Transfers the repaid yield to the Transmuter.<br/><br/>
-  Difference between \_forceRepay and \_liquidate:<br/>
-  Both use collateral to cover the cost, however for differetn purposes. ForceRepay is using collateral to reconcile earmarked debt. This may or may not bring collateralization ratio to the correct threshold. Liquidation occurs afterwords and uses collateral to reconcile LTV such that it meets the required threshold. ForceRepay occurs before Liquidations do.
-  - `@param accountId` - the id of the position to repay debt for
-  - `@param amount` - desired repayment in debt tokens
-- **Visibility Specifier** - internal
-- **State Mutability Specifier** - nonpayable
-- **Returns** - `uint256 creditToYield` - amount of yield tokens that were repaid and sent to the Transmuter
-- **Emits** - none
-- **Reverts** - No outstanding debt in the account to repay - [`UnknownAccountOwnerIDError()`](/dev/alchemist/alchemist-contract#Error_UnknownAccountOwnerIDError) — invalid `accountId`
->>>>>>> main
 </details>
 <details id="InternalOperations_addDebt">
   <summary>_addDebt(uint256 tokenId, uint256 amount)</summary>
@@ -1736,7 +1401,6 @@ TODO - I don't see this used anywhere??
 <details id="ReadingState_getCDP">
   <summary>getCDP(uint256 tokenId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Gets an Account's simulated up-to-date collateral, debt, and earmarked amounts. (as if it were synced to be current with global state)
     - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - external
@@ -1747,17 +1411,6 @@ TODO - I don't see this used anywhere??
     - collateral - the amount of collateral that has yet to be redeemed
   -	**Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Gets an Account's simulated up-to-date collateral, debt, and earmarked amounts. (as if it were synced to be current with global state)
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - view
-- **Returns** - a tuple (uint256, uint256, uint256) containing the following:
-  - debt - the amount of debt the account will have after an update
-  - earmarked - the amount of debt which is currently earmarked for redemption
-  - collateral - the amount of collateral that has yet to be redeemed
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="ReadingState_getTotalDeposited">
   <summary>getTotalDeposited()</summary>
@@ -1772,7 +1425,6 @@ TODO - I don't see this used anywhere??
 <details id="ReadingState_getMaxBorrowable">
   <summary>getMaxBorrowable(uint256 tokenId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Gets an Account's max amount of debtTokens that they can borrow (mint) given their outstanding LTV and deposited collateral.
     - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - external
@@ -1780,19 +1432,10 @@ TODO - I don't see this used anywhere??
   -	**Returns** - uint256 maxBorrowable
   -	**Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Gets an Account's max amount of debtTokens that they can borrow (mint) given their outstanding LTV and deposited collateral.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - view
-- **Returns** - uint256 maxBorrowable
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="ReadingState_mintAllowance">
   <summary>mintAllowance(uint256 ownerTokenId, address spender)</summary>
 
-<<<<<<< HEAD
   - **Description** - Gets the max amount of debt an approved spender is allowed to mint on behalf of an owner's account.
     - `@param ownerTokenId` - the id used to identify the account of the owner.
     - `@param spender` - the address of the person being granted allowance to mint on behalf of the owner.
@@ -1801,14 +1444,6 @@ TODO - I don't see this used anywhere??
   -	**Returns** - uint256 mintAllowance
   -	**Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Gets the max amount of debt an approved spender is allowed to mint on behalf of an owner's account.
-- **Visibility Specifier** - external
-- **State Mutability Specifier** - view
-- **Returns** - uint256 mintAllowance
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="ReadingState_getTotalUnderlyingValue">
   <summary>getTotalUnderlyingValue()</summary>
@@ -1823,7 +1458,6 @@ TODO - I don't see this used anywhere??
 <details id="ReadingState_totalValue">
   <summary>totalValue(uint256 tokenId)</summary>
 
-<<<<<<< HEAD
   - **Description** - Calculates the total value of a specific accounts up-to-date collateral value by first converting to underlying, and then denominating in debt tokens. Used internally during liquidations.
     - `@param tokenId` - the id used to identify the account.
   -	**Visibility Specifier** - public
@@ -1831,14 +1465,6 @@ TODO - I don't see this used anywhere??
   -	**Returns** - uint256 totalTokenTVLInUnderlying
   -	**Emits** - none
   - **Reverts** - none
-=======
-- **Description** - Calculates the total value of a specific accounts up-to-date collateral value by first converting to underlying, and then denominating in debt tokens. Used internally during liquidations.
-- **Visibility Specifier** - public
-- **State Mutability Specifier** - view
-- **Returns** - uint256 totalTokenTVLInUnderlying
-- **Emits** - none
-- **Reverts** - none
->>>>>>> main
 </details>
 <details id="ReadingState_convertYieldTokensToUnderlying">
   <summary>convertYieldTokensToUnderlying(uint256 amount)</summary>
