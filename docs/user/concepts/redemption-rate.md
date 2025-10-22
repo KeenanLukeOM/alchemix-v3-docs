@@ -1,9 +1,17 @@
 ---
 sidebar_position: 4
+hide_title: true
+sidebar_label: Redemption Rate
 ---
 
-# Redemption Rate
+import intro from '@site/static/img/introduction-01.png';
 
+<!-- TODO -->
+<!-- # Redemption Rate -->
+
+‎
+<img src={intro} alt="Introduction" style={{ width: '100%', height: 'auto', display: 'block' }} />
+\
 Redemptions convert earmarked collateral into the asset required to repay debt. Two ideas matter:
 
 - **Redemption rate** – how fast the system deleverages your position.
