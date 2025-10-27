@@ -1,8 +1,12 @@
 ---
 sidebar_position: 4
+hide_title: true
+sidebar_label: Risk Considerations
 ---
 
-# Risk Considerations
+import riskConsiderations from '@site/static/img/risk-considerations-01.png';
+
+<img src={riskConsiderations} alt="Risk Considerations" style={{ width: '100%', height: 'auto', display: 'block' }} />
 
 ## Protocol Trust & Risk Mitigation
 

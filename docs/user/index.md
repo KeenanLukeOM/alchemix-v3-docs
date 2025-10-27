@@ -1,7 +1,10 @@
-import AlchemixStats from "@site/src/components/AlchemixStats";
-import Hero from '@site/static/img/landing-01.webp';
+---
+hide_title: true
+sidebar_label: Introduction
+---
 
-# Getting started with Alchemix
+import AlchemixStats from "@site/src/components/AlchemixStats";
+import Hero from '@site/static/img/landing-01.png';
 
 <img src={Hero} alt="Alchemix v3" style={{ width: '100%', height: 'auto', display: 'block' }} />
 

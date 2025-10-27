@@ -1,8 +1,12 @@
 ---
 sidebar_position: 2
+hide_title: true
+sidebar_label: Repay Loans
 ---
 
-# Repay Loans
+import repayLoans from '@site/static/img/repay-loans-01.png';
+
+<img src={repayLoans} alt="Repay Loans" style={{ width: '100%', height: 'auto', display: 'block' }} />
 
 ## Why Repay?
 

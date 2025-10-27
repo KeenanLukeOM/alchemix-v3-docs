@@ -1,9 +1,15 @@
 ---
 sidebar_position: 6
+hide_title: true
+sidebar_label: Fixed-Duration Redemptions
 ---
 
-# Transmuter: Fixed-Duration Redemptions
+import redemptions from '@site/static/img/redemptions-01.png';
 
+<!-- TODO -->
+
+<img src={redemptions} alt="Redemptions" style={{ width: '100%', height: 'auto', display: 'block' }} />
+\
 The Transmuter lets you redeem alAssets (alUSD, alETH) 1:1 for their underlying asset after a known waiting period. Purchase below face value, and receive the full value on the maturity date.
 
 ## How Transmutations Flow

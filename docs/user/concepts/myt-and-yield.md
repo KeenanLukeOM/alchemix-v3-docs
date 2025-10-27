@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
+hide_title: true
+sidebar_label: Meta-Yield Token
 ---
 
 import MYT from '@site/static/img/MYT-banner.png';
-
-# MYT & Yield
 
 <img src={MYT} alt="Meta-Yield Token" style={{ width: '100%', height: 'auto', display: 'block' }} />
 \
