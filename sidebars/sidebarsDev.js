@@ -15,6 +15,7 @@ module.exports = {
     {
       type: "category",
       label: "Core Modules",
+      className: "sidebarBold",
       collapsed: false,
       items: [
         "alchemist/alchemist-contract",
