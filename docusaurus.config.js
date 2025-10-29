@@ -179,7 +179,6 @@ const config = {
           },
         ],
       },
-      // TODO
       footer: {
         style: "dark",
         links: [
@@ -249,7 +248,7 @@ const config = {
         ],
         logo: {
           alt: "Alchemix Logo",
-          src: "img/footer_logo.svg",
+          src: "img/alchemix-full.svg",
           href: "https://alchemix.fi/",
           width: 160,
         },
