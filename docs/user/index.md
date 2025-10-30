@@ -6,7 +6,7 @@ sidebar_label: Introduction
 import AlchemixStats from "@site/src/components/AlchemixStats";
 import Hero from '@site/static/img/landing-01.png';
 
-<img src={Hero} alt="Alchemix v3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={Hero} alt="Alchemix v3" class="banner-spacing" />
 
 ### QUICK START:
 

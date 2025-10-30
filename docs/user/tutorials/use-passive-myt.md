@@ -6,7 +6,7 @@ sidebar_label: Passive MYT Yield
 
 import mytYield from '@site/static/img/myt-yield-01.png';
 
-<img src={mytYield} alt="Passive MYT Yield" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={mytYield} alt="Passive MYT Yield" class="banner-spacing" />
 \
 The Meta-Yield Token turns a single deposit of ETH or UDSC into an auto-compounding position. Once minted, every MYT represents a growing claim on the underlying asset. No extra clicks are required to harvest or reinvest.
 

@@ -6,7 +6,7 @@ sidebar_label: Welcome
 
 import integrations from '@site/static/img/integrations-01.png';
 
-<img src={integrations} alt="Why Integrate Alchemix?" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={integrations} alt="Why Integrate Alchemix?" fetchpriority="high" class="banner-spacing" />
 
 ## What Alchemix v3 Delivers
 

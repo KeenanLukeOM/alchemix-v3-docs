@@ -8,7 +8,7 @@ import self from '@site/static/img/self-repaying-01.png';
 
 <!-- TODO -->
 
-<img src={self} alt="Self-Repaying Loans" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={self} alt="Self-Repaying Loans" class="banner-spacing" />
 \
 A self-repaying loan lets you unlock liquidity without immediately selling your core position.
 

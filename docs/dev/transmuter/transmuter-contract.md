@@ -6,7 +6,7 @@ sidebar_label: Transmuter
 
 import transmuter from '@site/static/img/transmuter-01.png';
 
-<img src={transmuter} alt="Transmuter" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={transmuter} alt="Transmuter" class="banner-spacing" />
 
 ## Description
 

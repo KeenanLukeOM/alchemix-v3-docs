@@ -6,7 +6,7 @@ sidebar_label: Risk Considerations
 
 import riskConsiderations from '@site/static/img/risk-considerations-01.png';
 
-<img src={riskConsiderations} alt="Risk Considerations" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={riskConsiderations} alt="Risk Considerations" class="banner-spacing" />
 
 ## Protocol Trust & Risk Mitigation
 

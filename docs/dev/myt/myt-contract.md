@@ -6,7 +6,7 @@ sidebar_label: MYTStrategy
 
 import mytstrategy from '@site/static/img/mytstrategy-01.png';
 
-<img src={mytstrategy} alt="MYTStrategy" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={mytstrategy} alt="MYTStrategy" class="banner-spacing" />
 
 ## Description
 

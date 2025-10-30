@@ -6,7 +6,7 @@ sidebar_label: AlchemistV3
 
 import alchemist from '@site/static/img/alchemist-01.png';
 
-<img src={alchemist} alt="AlchemistV3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={alchemist} alt="AlchemistV3" class="banner-spacing" />
 
 ## Description
 

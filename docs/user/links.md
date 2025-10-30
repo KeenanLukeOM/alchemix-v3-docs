@@ -6,7 +6,7 @@ sidebar_label: Links & Resources
 
 import linksResources from '@site/static/img/links-resources-01.png';
 
-<img src={linksResources} alt="Links & Resources" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={linksResources} alt="Links & Resources" class="banner-spacing" />
 \
 TODO
 

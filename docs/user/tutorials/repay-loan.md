@@ -6,7 +6,7 @@ sidebar_label: Repay Loans
 
 import repayLoans from '@site/static/img/repay-loans-01.png';
 
-<img src={repayLoans} alt="Repay Loans" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={repayLoans} alt="Repay Loans" class="banner-spacing" />
 
 ## Why Repay?
 

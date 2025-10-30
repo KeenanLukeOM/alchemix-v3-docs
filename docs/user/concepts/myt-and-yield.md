@@ -6,7 +6,7 @@ sidebar_label: Meta-Yield Token
 
 import MYT from '@site/static/img/MYT-banner.png';
 
-<img src={MYT} alt="Meta-Yield Token" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={MYT} alt="Meta-Yield Token" class="banner-spacing" />
 \
 Meta Yield Token (MYT) gives you passive exposure to a curated set of yield strategies without needing to manage positions yourself. Each token represents a share of assets that Alchemix allocates across multiple protocols.
 

@@ -49,3 +49,10 @@
 .menu__list-item.sidebarBold > .menu__list-item-collapsible > .menu__link {
   font-weight: 700;
 }
+
+.banner-spacing {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 1.25rem;
+}

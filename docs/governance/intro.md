@@ -6,7 +6,7 @@ sidebar_label: On-chain Governance
 
 import governance from '@site/static/img/governance-01.png';
 
-<img src={governance} alt="On-chain Governance" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={governance} alt="On-chain Governance" class="banner-spacing" />
 
 ### NOTE: Transition Phase
 

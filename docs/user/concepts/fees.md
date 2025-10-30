@@ -8,7 +8,7 @@ import fees from '@site/static/img/fees-01.png';
 
 <!-- TODO -->
 
-<img src={fees} alt="Fees" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={fees} alt="Fees" class="banner-spacing" />
 \
 Alchemix v3 keeps the cost structure transparent and predictable. Three parameters, each set by on-chain governance, clever every action a user can take. A redemption fee for borrowers, an optional redemption fee for Transmuter depositors, and a performance fee on Meta-Yield Token yield. No other fees apply.
 

@@ -5,7 +5,7 @@ sidebar_label: Quick Start
 
 import quickStartBanner from '@site/static/img/quick-start-banner-01.png';
 
-<img src={quickStartBanner} alt="Quick Start" style={{ width: '100%', height: 'auto', display: 'block' }} />
+<img src={quickStartBanner} alt="Quick Start" class="banner-spacing" />
 \
 This page gives you a low-risk way to see Alchemix at work. It will walk through a small deposit, a modest borrow, and what to expect as redemptions reduce your balance.
 
