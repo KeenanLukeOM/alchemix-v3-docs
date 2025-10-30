@@ -9,7 +9,7 @@ import self from '@site/static/img/self-repaying-01.png';
 <!-- TODO -->
 
 <img src={self} alt="Self-Repaying Loans" class="banner-spacing" />
-\
+
 A self-repaying loan lets you unlock liquidity without immediately selling your core position.
 
 Deposit ETH or USDC and the vault issues a like-kind synthetic asset, alETH or alUSD, that mirrors the price of what you deposited. You may mint alAssets worth up to **90%** of your collateral’s face value and deploy them however you like. Meanwhile, two built-in cash flows reduce the loan balance:

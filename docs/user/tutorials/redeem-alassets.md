@@ -7,7 +7,7 @@ sidebar_label: Redeem alAssets
 import redeemAlassets from '@site/static/img/redeem-alassets-banner-01.png';
 
 <img src={redeemAlassets} alt="Redeem alAssets" class="banner-spacing" />
-\
+
 The Earn page lists every fixed-rate term available on your current network. By depositing alAssets, or letting the interface swap ETH or USDC into their alAsset form, you lock in a known return that settles on the term’s maturity date.
 
 While your position sits in the queue Alchemix earmarks matching collateral at 1:1 so your redemption is guaranteed once the term ends. Early exits are possible, but they forfeit part of the promised yield.

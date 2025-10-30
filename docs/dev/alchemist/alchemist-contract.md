@@ -8,8 +8,6 @@ import alchemist from '@site/static/img/alchemist-01.png';
 
 <img src={alchemist} alt="AlchemistV3" class="banner-spacing" />
 
-## Description
-
 The Alchemist is the vault contract responsible for accepting deposits and issuing debt. It stores and tracks user accounts, earmarking and redemptions, and allows users to deposit, withdraw, and repay against their positions. Every Alchemist is associated with one Transmuter, one debt asset, (alAsset) and one MYT (yield strategy).
 
 ## Variables

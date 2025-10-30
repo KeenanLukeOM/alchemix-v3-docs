@@ -7,8 +7,8 @@ sidebar_label: Links & Resources
 import linksResources from '@site/static/img/links-resources-01.png';
 
 <img src={linksResources} alt="Links & Resources" class="banner-spacing" />
-\
-TODO
+
+<!-- TODO -->
 
 This documentation is the most complete learning resource, but it may lag behind day-to-day activity. Use the channels below to stay current and connect with the community.
 

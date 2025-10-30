@@ -11,7 +11,7 @@ import redemption from '@site/static/img/redemption-rate-01.png';
 <!-- # Redemption Rate -->
 
 <img src={redemption} alt="Redemption Rate" class="banner-spacing" />
-\
+
 Redemptions convert earmarked collateral into the asset required to repay debt. Two ideas matter:
 
 - **Redemption rate** – how fast the system deleverages your position.

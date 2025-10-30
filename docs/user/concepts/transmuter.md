@@ -9,7 +9,7 @@ import redemptions from '@site/static/img/redemptions-01.png';
 <!-- TODO -->
 
 <img src={redemptions} alt="Redemptions" class="banner-spacing" />
-\
+
 The Transmuter lets you redeem alAssets (alUSD, alETH) 1:1 for their underlying asset after a known waiting period. Purchase below face value, and receive the full value on the maturity date.
 
 ## How Transmutations Flow

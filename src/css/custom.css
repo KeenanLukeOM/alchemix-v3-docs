@@ -55,4 +55,11 @@
   height: auto;
   display: block;
   padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.banner-spacing + h1,
+.banner-spacing + h2,
+.banner-spacing + h3 {
+  margin-top: 0;
 }

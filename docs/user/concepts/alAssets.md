@@ -9,7 +9,7 @@ import alAssets from '@site/static/img/alAssets-01.png';
 <!-- TODO -->
 
 <img src={alAssets} alt="alAssets" class="banner-spacing" />
-\
+
 alAssets (alUSD, alETH) are synthetic tokens that mirror the value of their underlying asset. They play two roles:
 
 1. **Borrowing unit** - When you open a loan, new alAssets are minted to you.

@@ -8,8 +8,6 @@ import integrations from '@site/static/img/integrations-01.png';
 
 <img src={integrations} alt="Why Integrate Alchemix?" fetchpriority="high" class="banner-spacing" />
 
-## What Alchemix v3 Delivers
-
 Alchemix V3 turns a single deposit of ETH or USDC into two complementary positions. First, the funds are wrapped into a Meta-Yield Token (MYT) that earns yield across a diversified set of strategies curated by the Alchemix DAO. That same collateral unlocks a credit line, allowing users to mint synthetic alAssets, alETH or alUSD, worth up to ninety percent of the deposit.
 
 The redesigned Transmuted accepts these alAssets and, on a fixed schedule, returns MYT one-for-one. This mechanism keeps alAssets close to price parity with their underlying assets and created predictable, bond-like yield opportunities for anyone who accumulated alAssets below face value.
